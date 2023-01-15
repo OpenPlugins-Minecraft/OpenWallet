@@ -195,5 +195,6 @@ products:
 * [BoostedYAML](https://github.com/dejvokep/boosted-yaml) - The Best library 💗 for YAML configs
 * [Lombok](https://projectlombok.org/) - Awesome annotations for Java
 * [Triumph-GUI](https://github.com/TriumphTeam/triumph-gui) - Simple creation of guis
+* [IridiumColorAPI](https://github.com/Iridium-Development/IridiumColorAPI) - Great library for translating RGB messages
 
 ----
