@@ -1,6 +1,7 @@
 <div align="center">
 
-![Logo](https://i.imgur.com/MyQMeYF.png)
+![Logo](https://i.imgur.com/SGgWxRi.png)
+## OpenWallet - OpenSource Bukkit economy plugin
 
 [![GitHub build](https://img.shields.io/github/actions/workflow/status/neziw/OpenWallet/build.yml?style=for-the-badge)](https://github.com/neziw/OpenWallet/actions)
 ![Percentage of issues still open](https://img.shields.io/github/issues/neziw/OpenWallet?style=for-the-badge)
@@ -9,8 +10,9 @@
 [![Discord](https://img.shields.io/discord/1033673652077592636?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/mF3TehkeG3)
 [![Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3D132Development%26type%3Dpatrons&style=for-the-badge)](https://patreon.com/132Development)
 
-## OpenWallet - OpenSource Bukkit economy plugin [README IN PROGRESS]
 Welcome to the **OpenWallet** plugin! This is a brand new economy plugin with a lot of features (custom shops, hooks etc.)
+
+Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWallet/wiki) page!
 </div>
 
 ----
@@ -189,6 +191,11 @@ products:
       - "lp user {PLAYER} parent set vip"
 ```
 </details>
+
+----
+## Links
+* [Polymart](https://polymart.org/resource/openwallet-economy-plugin.3374)
+* [Wiki](https://github.com/neziw/OpenWallet/wiki)
 
 ----
 ## Other Dependencies usages
