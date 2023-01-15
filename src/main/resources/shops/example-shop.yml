@@ -1,0 +1,33 @@
+# This is example shop file
+name: "example-shop"
+# Title of the menu
+shop-title: "Example Shop"
+# Number of menu rows
+shop-size: 5
+# Products configuration
+products:
+  # First product is VIP rank
+  rank-vip:
+    # Name of the item
+    item-name: "&a[VIP] Rank"
+    # Lore of the item
+    item-lore:
+      - "&7Get better perks on our network"
+      - "&7with this exclusive rank"
+      - ""
+      - "&7Cost: &61000"
+      - ""
+      - "&eClick to purchase!"
+    # Slot of the item
+    item-slot: 11
+    # Material of the item
+    item-material: EMERALD_BLOCK
+    # Cost of this product
+    cost: 1000
+    # List of commands to execute after purchase
+    # You can use {PLAYER} for player name
+    commands:
+      # This permission makes that player cannot buy this product again
+      - "lp user {PLAYER} permission set openwallet.buyonce.rank-vip"
+      # This command will give rank to player
+      - "lp user {PLAYER} parent set vip"

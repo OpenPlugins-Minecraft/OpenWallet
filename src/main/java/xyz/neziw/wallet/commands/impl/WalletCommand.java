@@ -1,0 +1,44 @@
+package xyz.neziw.wallet.commands.impl;
+
+import dev.dejvokep.boostedyaml.YamlDocument;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import xyz.neziw.wallet.commands.WCommand;
+import xyz.neziw.wallet.managers.UserManager;
+import xyz.neziw.wallet.objects.WalletUser;
+
+import java.util.Collections;
+import java.util.List;
+
+import static xyz.neziw.wallet.utilities.ColorUtils.fix;
+
+public class WalletCommand extends WCommand {
+
+    private final UserManager userManager;
+    private final YamlDocument messages;
+
+    @SuppressWarnings("RedundantArrayCreation")
+    public WalletCommand(UserManager userManager, YamlDocument messages) {
+        super("wallet", "/wallet", new String[]{"openwallet"});
+        this.userManager = userManager;
+        this.messages = messages;
+    }
+
+    @Override
+    public void exec(CommandSender sender, String[] args) {
+        if (sender instanceof Player) {
+            Player player = (Player) sender;
+            WalletUser user = this.userManager.getUser(player.getUniqueId());
+            for (String string : this.messages.getStringList("wallet-command")) {
+                player.sendMessage(fix(string).replace("{BALANCE}", String.valueOf(user.getBalance())));
+            }
+        } else {
+            sender.sendMessage(fix(this.messages.getString("errors.player-only")));
+        }
+    }
+
+    @Override
+    public List<String> complete(CommandSender sender, String[] args) {
+        return Collections.emptyList();
+    }
+}

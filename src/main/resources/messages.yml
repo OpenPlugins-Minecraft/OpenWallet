@@ -1,0 +1,38 @@
+# Configuration file version (don't change manually)
+config-version: 1
+
+# Output messages for /wallet command
+wallet-command:
+  - ""
+  - " &e&lWallet:"
+  - " &7Your current balance: &6{BALANCE}"
+  - ""
+
+# Output messages for /wadmin command
+wadmin-command:
+  - "&8&l---------------------------------"
+  - "&6/wadmin add <player> <amount> &8- &7gives balance to player"
+  - "&6/wadmin set <player> <amount> &8- &7sets balance from player"
+  - "&6/wadmin take <player> <amount> &8- &7takes balance from player"
+  - "&6/wadmin check <player> &8- &7gets player balance"
+  - "&6/wadmin panel &8- &7opens configuration panel"
+  - "&8&l---------------------------------"
+
+# Error messages
+errors:
+  unknown-user: "&cThis player doesn't exist!"
+  player-only: "&cYou can't execute this command as console!"
+  no-permission: "&cYou don't have access to this command!"
+  incorrect-usage: "&cIncorrect usage!"
+  invalid-number: "&cArgument must be a number!"
+  too-much-value: "&cTarget player doesn't have that much balance!"
+  not-enough-balance: "&cYou don't have enough balance to buy this!"
+  already-owned: "&cYou can't buy this again!"
+  shop-not-exists: "&cInvalid shop provided!"
+
+# Other messages
+balance-gave: "&aYou gave &6{BALANCE} &ato &6{PLAYER} &aaccount."
+balance-set: "&aYou set &6{BALANCE} &afor &6{PLAYER} &aaccount."
+balance-took: "&aYou took &6{BALANCE} &afrom &6{PLAYER} &aaccount."
+balance-check: "&aPlayer &6{PLAYER} &abalance is: &6{BALANCE}"
+successfully-purchased: "&aSuccessfully purchased {PRODUCT}"

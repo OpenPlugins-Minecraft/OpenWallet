@@ -1,0 +1,42 @@
+# Configuration file version (don't change manually)
+config-version: 1
+
+# Database configuration
+database-settings:
+  # Type of database (MySQL/SQLite)
+  # Default: SQLite
+  type: SQLite
+  # Host IP address (use 127.0.0.1 for local)
+  # Default: 127.0.0.1
+  host: 127.0.0.1
+  # Port of database
+  # Default: 3306
+  port: 3306
+  # Name of database user
+  # Default: minecraft
+  user: minecraft
+  # Password of database user
+  # Default:
+  password: ''
+  # Name of database
+  # Default: wallet_plugin
+  database: wallet_plugin
+
+# Default player balance on first join
+# Default: 20.0
+start-balance: 20.0
+
+# Whether PlaceholderAPI hook should be enabled
+# Default: true
+hook-placeholder-api: true
+
+# Whether GadgetsMenu hook should be enabled
+# Default: false
+hook-gadgets-menu: false
+
+# Whether save task should run after plugin enable
+# This is useful in situations like crashes etc.
+# If you have this option disabled - player data like their balance
+# will only save in certain situations
+# Default: true
+auto-data-save: true

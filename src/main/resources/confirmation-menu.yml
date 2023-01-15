@@ -1,0 +1,25 @@
+# Settings for confirmation menu
+menu-settings:
+  # Title of the menu
+  gui-title: "Confirm your purchase"
+  # Number of menu rows
+  gui-size: 3
+  # Accept button material
+  accept-item: "GREEN_WOOL"
+  # Cancel button material
+  cancel-item: "RED_WOOL"
+  # Accept button name and lore
+  accept-name: "&aConfirm purchase"
+  accept-lore:
+    - "&7Warning! This action cannot"
+    - "&7be undone"
+    - " "
+    - "&eClick to purchase!"
+  # Cancel button name and lore
+  cancel-name: "&cCancel purchase"
+  cancel-lore:
+    - " "
+    - "&eClick to cancel!"
+  # Slots of items
+  accept-item-slot: 11
+  cancel-item-slot: 15
