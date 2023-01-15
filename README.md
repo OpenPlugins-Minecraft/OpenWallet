@@ -204,6 +204,7 @@ products:
 
 ----
 ## Links
+* [Modrinth](https://modrinth.com/plugin/openwallet)
 * [Polymart](https://polymart.org/resource/openwallet-economy-plugin.3374)
 * [Wiki](https://github.com/neziw/OpenWallet/wiki)
 
