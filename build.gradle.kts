@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-    implementation("dev.dejvokep:boosted-yaml:1.3")
+    implementation("dev.dejvokep:boosted-yaml:1.3.1")
     implementation("dev.triumphteam:triumph-gui:3.1.4")
     compileOnly(files("/libs/GadgetsMenu.jar"))
     compileOnly("me.clip:placeholderapi:2.9.2")
