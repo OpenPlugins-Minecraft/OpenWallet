@@ -14,14 +14,14 @@ Welcome to the **OpenWallet** plugin! This is a brand new economy plugin with a 
 
 Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWallet/wiki) page!
 
-[![Polymart](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/polymart_64h.png?raw=true)](https://polymart.org/resource/openwallet-economy-plugin.3374)
-[![Modrinth](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/modrinth_64h.png?raw=true)](https://modrinth.com/mod/openwallet)
-![JDK11](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/built-with/java11_64h.png?raw=true)
-![Gradle](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/built-with/gradle_64h.png?raw=true)
-
-![Bukkit](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/bukkit_64h.png?raw=true)
-![Spigot](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/spigot_64h.png?raw=true)
-![Paper](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/paper_64h.png?raw=true)
+[![Polymart](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/polymart_vector.svg?raw=true)](https://polymart.org/resource/openwallet-economy-plugin.3374)
+[![Modrinth](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/modrinth_vector.svg?raw=true)](https://modrinth.com/mod/openwallet)</br>
+![JDK11](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/built-with/java11_vector.svg?raw=true)
+![Gradle](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/built-with/gradle_vector.svg?raw=true)
+</br>
+![Bukkit](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/bukkit_vector.svg?raw=true)
+![Spigot](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/spigot_vector.svg?raw=true)
+![Paper](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/paper_vector.svg?raw=true)
 </div>
 
 ----
