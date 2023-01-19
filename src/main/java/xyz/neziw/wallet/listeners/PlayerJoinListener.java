@@ -5,13 +5,9 @@ import lombok.AllArgsConstructor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
-import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.UserManager;
-import xyz.neziw.wallet.objects.Product;
-import xyz.neziw.wallet.objects.Shop;
 import xyz.neziw.wallet.objects.WalletUser;
 
 @AllArgsConstructor
