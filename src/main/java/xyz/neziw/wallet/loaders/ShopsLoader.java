@@ -38,7 +38,6 @@ public class ShopsLoader {
                     shopConfigs.getInt("shop-size"), shopConfigs
             );
             for (String string : shopConfigs.getConfigurationSection("products").getKeys(false)) {
-                System.out.println(string);
                 Product product = new Product(string, shopConfigs.getString("products." + string + ".item-name"),
                         shopConfigs.getInt("products." + string + ".item-slot"),
                         shopConfigs.getString("products." + string + ".item-material"),

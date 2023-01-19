@@ -39,15 +39,4 @@ public class PlayerJoinListener implements Listener {
             user.setBalance(this.config.getDouble("start-balance"));
         }
     }
-
-    @EventHandler
-    public void test(AsyncPlayerChatEvent event) {
-        if (event.getMessage().equalsIgnoreCase("debug")) {
-            event.setCancelled(true);
-            Shop shop = WalletPlugin.getInstance().getShopsLoader().getShops().get("example-shop");
-            for (Product product : shop.getProducts().values()) {
-                event.getPlayer().sendMessage(product.getLore().toString());
-            }
-        }
-    }
 }
