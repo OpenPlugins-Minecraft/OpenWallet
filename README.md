@@ -4,9 +4,13 @@
 ## OpenWallet - OpenSource Bukkit economy plugin
 
 [![GitHub build](https://img.shields.io/github/actions/workflow/status/neziw/OpenWallet/build.yml?style=for-the-badge)](https://github.com/neziw/OpenWallet/actions)
-![Percentage of issues still open](https://img.shields.io/github/issues/neziw/OpenWallet?style=for-the-badge)
-[![GitHub repo](https://img.shields.io/github/repo-size/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet)
-[![GitHub stars](https://img.shields.io/github/stars/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/stargazers)    
+![Last Commit](https://img.shields.io/github/last-commit/neziw/OpenWallet?style=for-the-badge)
+[![Open issues](https://img.shields.io/github/issues/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/issues)
+[![Open pull requests](https://img.shields.io/github/issues-pr/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet)
+[![License](https://img.shields.io/github/license/neziw/OpenWallet?style=for-the-badge)](LICENSE)
+[![Repo size](https://img.shields.io/github/repo-size/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet)
+![Latest Tag](https://img.shields.io/github/v/tag/neziw/OpenWallet?label=LATEST%20TAG&style=for-the-badge)
+[![GitHub stars](https://img.shields.io/github/stars/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/stargazers)   </br>
 [![Discord](https://img.shields.io/discord/1033673652077592636?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/mF3TehkeG3)
 [![Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3D132Development%26type%3Dpatrons&style=for-the-badge)](https://patreon.com/132Development)
 
