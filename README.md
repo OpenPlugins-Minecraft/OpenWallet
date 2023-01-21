@@ -8,6 +8,7 @@
 [![Open issues](https://img.shields.io/github/issues/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/issues)
 [![Open pull requests](https://img.shields.io/github/issues-pr/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet)
 [![License](https://img.shields.io/github/license/neziw/OpenWallet?style=for-the-badge)](LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/neziw/OpenWallet?color=blue&style=for-the-badge)](https://github.com/neziw/OpenWallet/graphs/contributors)
 [![Repo size](https://img.shields.io/github/repo-size/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet)
 ![Latest Tag](https://img.shields.io/github/v/tag/neziw/OpenWallet?label=LATEST%20TAG&style=for-the-badge)
 [![GitHub stars](https://img.shields.io/github/stars/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/stargazers)   </br>
