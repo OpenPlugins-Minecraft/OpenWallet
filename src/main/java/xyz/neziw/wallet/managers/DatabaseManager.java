@@ -64,8 +64,10 @@ public class DatabaseManager {
 
     @SneakyThrows
     public void disconnect() {
-        this.connection.close();
-        this.connection = null;
+        if (this.connection != null) {
+            this.connection.close();
+            this.connection = null;
+        }
     }
 
     private void createTables() {
