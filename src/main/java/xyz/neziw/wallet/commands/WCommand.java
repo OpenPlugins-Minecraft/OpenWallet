@@ -7,13 +7,12 @@ import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 import xyz.neziw.wallet.WalletPlugin;
 
-import java.util.Arrays;
 import java.util.List;
 
 public abstract class WCommand extends Command implements PluginIdentifiableCommand {
 
-    protected WCommand(String name, String usage, String... aliases) {
-        super(name, "OpenWallet plugin command", usage, Arrays.asList(aliases));
+    protected WCommand(String name, String usage, List<String> aliases) {
+        super(name, "OpenWallet plugin command", usage, aliases);
     }
 
     @NotNull

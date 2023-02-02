@@ -17,9 +17,8 @@ public class WalletCommand extends WCommand {
     private final UserManager userManager;
     private final YamlDocument messages;
 
-    @SuppressWarnings("RedundantArrayCreation")
-    public WalletCommand(UserManager userManager, YamlDocument messages) {
-        super("wallet", "/wallet", new String[]{"openwallet"});
+    public WalletCommand(UserManager userManager, YamlDocument config, YamlDocument messages) {
+        super(config.getString("commands-aliases.wallet.command"), "", config.getStringList("commands-aliases.wallet.aliases"));
         this.userManager = userManager;
         this.messages = messages;
     }

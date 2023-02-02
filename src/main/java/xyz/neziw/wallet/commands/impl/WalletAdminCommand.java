@@ -22,9 +22,8 @@ public class WalletAdminCommand extends WCommand {
     private final UserManager userManager;
     private final YamlDocument messages;
 
-    @SuppressWarnings("RedundantArrayCreation")
-    public WalletAdminCommand(UserManager userManager, YamlDocument messages) {
-        super("wadmin", "wadmin [args]", new String[]{"wadmin", "wa"});
+    public WalletAdminCommand(UserManager userManager, YamlDocument config, YamlDocument messages) {
+        super(config.getString("commands-aliases.wallet-admin.command"), "", config.getStringList("commands-aliases.wallet-admin.aliases"));
         this.userManager = userManager;
         this.messages = messages;
     }

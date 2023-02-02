@@ -76,9 +76,9 @@ public class WalletPlugin extends JavaPlugin {
         pluginManager.registerEvents(new PlayerJoinListener(this.userManager, this.databaseManager, this.mainConfig), this);
         pluginManager.registerEvents(PlayerInput.handle(), this);
         CommandManager commandManager = new CommandManager(this);
-        commandManager.registerCommand(new WalletCommand(this.userManager, this.messagesConfig));
-        commandManager.registerCommand(new WalletAdminCommand(this.userManager, this.messagesConfig));
-        commandManager.registerCommand(new ShopCommand(this.shopsLoader, this.messagesConfig));
+        commandManager.registerCommand(new WalletCommand(this.userManager, this.mainConfig, this.messagesConfig));
+        commandManager.registerCommand(new WalletAdminCommand(this.userManager, this.mainConfig, this.messagesConfig));
+        commandManager.registerCommand(new ShopCommand(this.shopsLoader, this.mainConfig, this.messagesConfig));
         if (this.mainConfig.getBoolean("auto-data-save")) {
             getServer().getScheduler().runTaskTimer(this, new SaveTaskRunnable(this.userManager, this.databaseManager),
                     0L, 300 * 20L

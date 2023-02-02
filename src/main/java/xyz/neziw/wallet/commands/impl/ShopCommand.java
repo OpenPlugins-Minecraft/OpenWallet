@@ -19,9 +19,8 @@ public class ShopCommand extends WCommand {
     private final ShopsLoader shopsLoader;
     private final YamlDocument messages;
 
-    @SuppressWarnings("RedundantArrayCreation")
-    public ShopCommand(ShopsLoader shopsLoader, YamlDocument messages) {
-        super("shop", "/shop [shop]", new String[]{"walletshop"});
+    public ShopCommand(ShopsLoader shopsLoader, YamlDocument config, YamlDocument messages) {
+        super(config.getString("commands-aliases.shop.command"), "", config.getStringList("commands-aliases.shop.aliases"));
         this.shopsLoader = shopsLoader;
         this.messages = messages;
     }

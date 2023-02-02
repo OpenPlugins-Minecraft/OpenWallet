@@ -1,5 +1,5 @@
 # Configuration file version (don't change manually)
-config-version: 1
+config-version: 2
 
 # Database configuration
 database-settings:
@@ -40,3 +40,26 @@ hook-gadgets-menu: false
 # will only save in certain situations
 # Default: true
 auto-data-save: true
+
+
+# Configuration for commands aliases
+commands-aliases:
+  # Admin command
+  wallet-admin:
+    command: 'wadmin'
+    aliases:
+      - 'walletadmin'
+      - 'wa'
+  # Balance command
+  wallet:
+    command: 'wallet'
+    aliases:
+      - 'balance'
+      - 'openwallet'
+  # Shop command
+  shop:
+    command: 'shop'
+    aliases:
+      - 'shops'
+      - 'walletshop'
+      - 'store'
