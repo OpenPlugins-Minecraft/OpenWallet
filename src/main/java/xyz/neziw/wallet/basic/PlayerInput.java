@@ -48,11 +48,11 @@ public class PlayerInput {
         return new Listener() {
             @EventHandler
             public void onChatInput(AsyncPlayerChatEvent event) {
-                Player player = event.getPlayer();
-                String input = event.getMessage();
-                UUID uuid = player.getUniqueId();
+                final Player player = event.getPlayer();
+                final String input = event.getMessage();
+                final UUID uuid = player.getUniqueId();
                 if (inputs.containsKey(uuid)) {
-                    PlayerInput current = inputs.get(uuid);
+                    final PlayerInput current = inputs.get(uuid);
                     event.setCancelled(true);
                     if (input.equalsIgnoreCase("cancel")) {
                         player.sendMessage(fix("&cCancelled input!"));

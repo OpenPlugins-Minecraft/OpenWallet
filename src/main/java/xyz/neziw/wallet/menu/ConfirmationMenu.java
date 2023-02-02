@@ -42,13 +42,13 @@ public class ConfirmationMenu {
 
     @SuppressWarnings("deprecation")
     private void open(Player player) {
-        Gui gui = Gui.gui()
+        final Gui gui = Gui.gui()
                 .title(Component.text(this.menuConfig.getString("menu-settings.gui-title")))
                 .rows(this.menuConfig.getInt("menu-settings.gui-size"))
                 .create();
         gui.getInventory().clear();
         gui.setDefaultClickAction(event -> event.setCancelled(true));
-        GuiItem acceptItem = ItemBuilder.from(Material.valueOf(this.menuConfig.getString("menu-settings.accept-item")))
+        final GuiItem acceptItem = ItemBuilder.from(Material.valueOf(this.menuConfig.getString("menu-settings.accept-item")))
                 .setName(fix(this.menuConfig.getString("menu-settings.accept-name")))
                 .setLore(fixList(this.menuConfig.getStringList("menu-settings.accept-lore")))
                 .asGuiItem(event -> {
@@ -69,7 +69,7 @@ public class ConfirmationMenu {
                     }
                 });
         gui.setItem(this.menuConfig.getInt("menu-settings.accept-item-slot"), acceptItem);
-        GuiItem cancelItem = ItemBuilder.from(Material.valueOf(this.menuConfig.getString("menu-settings.cancel-item")))
+        final GuiItem cancelItem = ItemBuilder.from(Material.valueOf(this.menuConfig.getString("menu-settings.cancel-item")))
                 .setName(fix(this.menuConfig.getString("menu-settings.cancel-name")))
                 .setLore(fixList(this.menuConfig.getStringList("menu-settings.cancel-lore")))
                 .asGuiItem(event -> {

@@ -28,7 +28,7 @@ public class ManagerMenu {
 
     @SuppressWarnings("deprecation")
     public void open(Player player) {
-        Gui gui = Gui.gui()
+        final Gui gui = Gui.gui()
                 .title(Component.text("OpenWallet Configuration"))
                 .rows(6)
                 .create();
@@ -43,7 +43,7 @@ public class ManagerMenu {
                 ItemBuilder.from(Material.PURPLE_STAINED_GLASS_PANE).name(Component.text(" ")).asGuiItem(),
                 ItemBuilder.from(Material.PINK_STAINED_GLASS_PANE).name(Component.text(" ")).asGuiItem()
         ));
-        GuiItem startBalance = ItemBuilder.skull()
+        final GuiItem startBalance = ItemBuilder.skull()
                 .texture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjA5Mjk5YTExN2JlZTg4ZDMyNjJmNmFiOTgyMTFmYmEzNDRlY2FlMzliNDdlYzg0ODEyOTcwNmRlZGM4MWU0ZiJ9fX0=")
                 .setName(fix("&aStarting balance"))
                 .setLore(fixList(Arrays.asList(
@@ -57,7 +57,7 @@ public class ManagerMenu {
                 .asGuiItem(event -> {
                     gui.close(player);
                     new PlayerInput(player, input -> {
-                        double value = Double.parseDouble(input);
+                        final double value = Double.parseDouble(input);
                         this.config.set("start-balance", value);
                         try {
                             this.config.save();
@@ -72,7 +72,7 @@ public class ManagerMenu {
                     });
                 });
         gui.setItem(20, startBalance);
-        GuiItem placeholderHook;
+        final GuiItem placeholderHook;
         if (this.config.getBoolean("hook-placeholder-api")) {
             placeholderHook = ItemBuilder.skull()
                     .texture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzc0NzJkNjA4ODIxZjQ1YTg4MDUzNzZlYzBjNmZmY2I3ODExNzgyOWVhNWY5NjAwNDFjMmEwOWQxMGUwNGNiNCJ9fX0=")
@@ -118,7 +118,7 @@ public class ManagerMenu {
                     });
             gui.setItem(23, placeholderHook);
         }
-        GuiItem gadgetsMenuHook;
+        final GuiItem gadgetsMenuHook;
         if (this.config.getBoolean("hook-gadgets-menu")) {
             gadgetsMenuHook = ItemBuilder.skull()
                     .texture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzc0NzJkNjA4ODIxZjQ1YTg4MDUzNzZlYzBjNmZmY2I3ODExNzgyOWVhNWY5NjAwNDFjMmEwOWQxMGUwNGNiNCJ9fX0=")
@@ -164,13 +164,13 @@ public class ManagerMenu {
                     });
             gui.setItem(24, gadgetsMenuHook);
         }
-        GuiItem shops = ItemBuilder.skull()
+        final GuiItem shops = ItemBuilder.skull()
                 .texture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQwMDVlYmJmOTgxN2Q2OTI4ZGU4YmM1ZjdkMWMzODkyNzYwMjBhYzg3NjQ3ZDI4YWI4Zjk5ZWIzOWZmZGU3NiJ9fX0=")
                 .setName(fix("&aLoaded shops"))
                 .setLore(fixList(this.getShopsList()))
                 .asGuiItem();
         gui.setItem(29, shops);
-        GuiItem reload = ItemBuilder.skull()
+        final GuiItem reload = ItemBuilder.skull()
                 .texture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTRkNDliYWU5NWM3OTBjM2IxZmY1YjJmMDEwNTJhNzE0ZDYxODU0ODFkNWIxYzg1OTMwYjNmOTlkMjMyMTY3NCJ9fX0=")
                 .setName(fix("&aReload configurations"))
                 .setLore(fixList(Arrays.asList("", "&eClick to reload configs!")))
@@ -186,7 +186,7 @@ public class ManagerMenu {
                     } catch (IOException ignored) { }
                 });
         gui.setItem(30, reload);
-        GuiItem saveTask = ItemBuilder.skull()
+        final GuiItem saveTask = ItemBuilder.skull()
                 .texture("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYmQ4NmRiOWExNGQ1ODc5ZmEyODExZDMwMWNjYmQ1MjY5OTRmODcxMjQ3YjYyZjJkOWE0ODE4M2U5NjQxYWQ2OSJ9fX0=")
                 .setName(fix("&bAuto-save is currently " + (this.config.getBoolean("auto-data-save") ? "&a&lENABLED" : "&c&lDISABLED")))
                 .setLore(fixList(Arrays.asList("", "&7Player data will automatically save", "&7every 5 minutes to the database", "")))
@@ -196,7 +196,7 @@ public class ManagerMenu {
     }
 
     private List<String> getShopsList() {
-        List<String> list = new ArrayList<>();
+        final List<String> list = new ArrayList<>();
         list.add("&7List of currently loaded shops:");
         list.add("");
         for (String string : this.shopsLoader.getShops().keySet()) {

@@ -74,7 +74,7 @@ public class DatabaseManager {
         this.executor.execute(() -> {
             try {
                 this.connect();
-                PreparedStatement statement;
+                final PreparedStatement statement;
                 statement = this.connection.prepareStatement("CREATE TABLE IF NOT EXISTS wallet_data (uuid VARCHAR(100) PRIMARY KEY, " +
                         "name VARCHAR(16), balance DOUBLE)");
                 statement.execute();
@@ -89,7 +89,7 @@ public class DatabaseManager {
     @SneakyThrows
     public boolean exists(String name) {
         this.connect();
-        PreparedStatement statement;
+        final PreparedStatement statement;
         statement = this.connection.prepareStatement("SELECT * FROM wallet_data WHERE name=?");
         statement.setString(1, name);
         ResultSet result = statement.executeQuery();
@@ -100,7 +100,7 @@ public class DatabaseManager {
         this.executor.execute(() -> {
             try {
                 this.connect();
-                PreparedStatement statement;
+                final PreparedStatement statement;
                 statement = this.connection.prepareStatement("INSERT INTO wallet_data (uuid, name, balance) VALUES (?,?,?)");
                 statement.setString(1, uuid.toString());
                 statement.setString(2, name);
@@ -118,7 +118,7 @@ public class DatabaseManager {
         this.executor.execute(() -> {
             try {
                 this.connect();
-                PreparedStatement statement;
+                final PreparedStatement statement;
                 statement = this.connection.prepareStatement("SELECT * FROM wallet_data WHERE uuid=?");
                 statement.setString(1, user.getUuid().toString());
                 ResultSet result = statement.executeQuery();
@@ -138,7 +138,7 @@ public class DatabaseManager {
         this.executor.execute(() -> {
             try {
                 this.connect();
-                PreparedStatement statement;
+                final PreparedStatement statement;
                 statement = this.connection.prepareStatement("UPDATE wallet_data SET name=?, balance=? WHERE uuid=?");
                 statement.setString(1, user.getName());
                 statement.setDouble(2, user.getBalance());
@@ -155,7 +155,7 @@ public class DatabaseManager {
     @SneakyThrows
     public double getBalanceByName(String name) {
         this.connect();
-        PreparedStatement statement;
+        final PreparedStatement statement;
         statement = this.connection.prepareStatement("SELECT * FROM wallet_data WHERE name=?");
         statement.setString(1, name);
         ResultSet result;
@@ -167,7 +167,7 @@ public class DatabaseManager {
         this.executor.execute(() -> {
             try {
                 this.connect();
-                PreparedStatement statement;
+                final PreparedStatement statement;
                 statement = this.connection.prepareStatement("UPDATE wallet_data SET balance=? WHERE name=?");
                 statement.setDouble(1, balance);
                 statement.setString(2, name);
@@ -181,14 +181,14 @@ public class DatabaseManager {
     }
 
     public void deposit(String name, double balance) {
-        double current = this.getBalanceByName(name);
-        double newBalance = current + balance;
+        final double current = this.getBalanceByName(name);
+        final double newBalance = current + balance;
         this.setBalanceByName(name, newBalance);
     }
 
     public void withDraw(String name, double balance) {
-        double current = this.getBalanceByName(name);
-        double newBalance = current - balance;
+        final double current = this.getBalanceByName(name);
+        final double newBalance = current - balance;
         this.setBalanceByName(name, newBalance);
     }
 }

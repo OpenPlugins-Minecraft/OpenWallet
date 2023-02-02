@@ -25,20 +25,20 @@ public class ShopsLoader {
 
     @SuppressWarnings({"ConstantConditions", "ResultOfMethodCallIgnored"})
     public void loadShops() {
-        File dataFolder = new File(this.plugin.getDataFolder(), "shops");
+        final File dataFolder = new File(this.plugin.getDataFolder(), "shops");
         if (!dataFolder.exists()) {
             dataFolder.mkdirs();
         }
-        List<FileConfiguration> configs = new ArrayList<>();
+        final List<FileConfiguration> configs = new ArrayList<>();
         for (File file : dataFolder.listFiles()) {
             configs.add(YamlConfiguration.loadConfiguration(file));
         }
         for (FileConfiguration shopConfigs : configs) {
-            Shop shop = new Shop(shopConfigs.getString("name"), shopConfigs.getString("shop-title"),
+            final Shop shop = new Shop(shopConfigs.getString("name"), shopConfigs.getString("shop-title"),
                     shopConfigs.getInt("shop-size"), shopConfigs
             );
             for (String string : shopConfigs.getConfigurationSection("products").getKeys(false)) {
-                Product product = new Product(string, shopConfigs.getString("products." + string + ".item-name"),
+                final Product product = new Product(string, shopConfigs.getString("products." + string + ".item-name"),
                         shopConfigs.getInt("products." + string + ".item-slot"),
                         shopConfigs.getString("products." + string + ".item-material"),
                         shopConfigs.getDouble("products." + string + ".cost")

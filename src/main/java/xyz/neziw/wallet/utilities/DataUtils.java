@@ -16,9 +16,9 @@ public class DataUtils {
     private static final DatabaseManager databaseManager = plugin.getDatabaseManager();
 
     public static void setBalance(String name, double balance) {
-        Player player = Bukkit.getPlayer(name);
+        final Player player = Bukkit.getPlayer(name);
         if (player != null) {
-            WalletUser user = userManager.getUser(player.getUniqueId());
+            final WalletUser user = userManager.getUser(player.getUniqueId());
             user.setBalance(balance);
             databaseManager.saveUser(user);
         } else {
@@ -27,9 +27,9 @@ public class DataUtils {
     }
 
     public static void depositBalance(String name, double balance) {
-        Player player = Bukkit.getPlayer(name);
+        final Player player = Bukkit.getPlayer(name);
         if (player != null) {
-            WalletUser user = userManager.getUser(player.getUniqueId());
+            final WalletUser user = userManager.getUser(player.getUniqueId());
             user.setBalance(user.getBalance() + balance);
             databaseManager.saveUser(user);
         } else {
@@ -38,9 +38,9 @@ public class DataUtils {
     }
 
     public static void withDrawBalance(String name, double balance) {
-        Player player = Bukkit.getPlayer(name);
+        final Player player = Bukkit.getPlayer(name);
         if (player != null) {
-            WalletUser user = userManager.getUser(player.getUniqueId());
+            final WalletUser user = userManager.getUser(player.getUniqueId());
             user.setBalance(user.getBalance() - balance);
             databaseManager.saveUser(user);
         } else {
@@ -49,9 +49,9 @@ public class DataUtils {
     }
 
     public static double getBalance(String name) {
-        Player player = Bukkit.getPlayer(name);
+        final Player player = Bukkit.getPlayer(name);
         if (player != null) {
-            WalletUser user = userManager.getUser(player.getUniqueId());
+            final WalletUser user = userManager.getUser(player.getUniqueId());
             return user.getBalance();
         } else {
             return databaseManager.getBalanceByName(name);

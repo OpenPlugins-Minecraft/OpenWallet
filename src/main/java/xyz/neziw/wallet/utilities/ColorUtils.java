@@ -14,7 +14,7 @@ public class ColorUtils {
     }
 
     public static List<String> fixList(List<String> messageList) {
-        List<String> list = new ArrayList<>();
+        final List<String> list = new ArrayList<>();
         for (String string : messageList) {
             list.add(fix(string));
         }

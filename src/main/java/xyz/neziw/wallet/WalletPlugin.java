@@ -71,11 +71,11 @@ public class WalletPlugin extends JavaPlugin {
         this.databaseManager = new DatabaseManager(this, this.mainConfig);
         this.hookManager = new HookManager(this, this.mainConfig);
         this.shopsLoader = new ShopsLoader(this);
-        PluginManager pluginManager = getServer().getPluginManager();
+        final PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
         pluginManager.registerEvents(new PlayerJoinListener(this.userManager, this.databaseManager, this.mainConfig), this);
         pluginManager.registerEvents(PlayerInput.handle(), this);
-        CommandManager commandManager = new CommandManager(this);
+        final CommandManager commandManager = new CommandManager(this);
         commandManager.registerCommand(new WalletCommand(this.userManager, this.mainConfig, this.messagesConfig));
         commandManager.registerCommand(new WalletAdminCommand(this.userManager, this.mainConfig, this.messagesConfig));
         commandManager.registerCommand(new ShopCommand(this.shopsLoader, this.mainConfig, this.messagesConfig));
@@ -98,13 +98,13 @@ public class WalletPlugin extends JavaPlugin {
 
     @SuppressWarnings("DataFlowIssue")
     private void exampleShop() {
-        File file = new File(getDataFolder(), "shops");
+        final File file = new File(getDataFolder(), "shops");
         if (!file.isDirectory()) throw new UnsupportedOperationException("Shops folder is not directory");
 
-        File[] files = file.listFiles();
+        final File[] files = file.listFiles();
         if (files == null || files.length == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/shops/example-shop.yml")) {
-                File exampleShop = new File(file, "example-shop.yml");
+                final File exampleShop = new File(file, "example-shop.yml");
                 Files.copy(inputStream, exampleShop.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException exception) {
                 exception.printStackTrace();

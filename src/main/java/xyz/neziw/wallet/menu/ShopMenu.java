@@ -22,14 +22,14 @@ public class ShopMenu {
 
     @SuppressWarnings("deprecation")
     private void open(Player player) {
-        Gui gui = Gui.gui()
+        final Gui gui = Gui.gui()
                 .title(Component.text(this.shop.getTitle()))
                 .rows(this.shop.getSize())
                 .create();
         gui.getInventory().clear();
         gui.setDefaultClickAction(event -> event.setCancelled(true));
         for (Product product : this.shop.getProducts().values()) {
-            GuiItem guiItem;
+            final GuiItem guiItem;
             guiItem = ItemBuilder.from(product.getMaterial()).setName(fix(product.getName()))
                     .setLore(fixList(product.getLore()))
                     .asGuiItem(event -> new ConfirmationMenu(product, this.shop, player));
