@@ -33,16 +33,16 @@ Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWall
 
 ----
 ## Features
-* YAML Configuration
-* Fully customizable and unlimited shops
-* Simple management panel (for admins)
-* Admin commands
-* All messages can be translated
-* Confirmation menu
-* Option to make only once-buy items
-* SQLite and MySQL database support
-* Balance command for players
-* PlaceholderAPI support
+  * YAML Configuration
+  * Fully customizable and unlimited shops
+  * Simple management panel (for admins)
+  * Admin commands
+  * All messages can be translated
+  * Confirmation menu
+  * Option to make only once-buy items
+  * SQLite and MySQL database support
+  * Balance command for players
+  * PlaceholderAPI support
 
 ----
 ## Default configuration files
@@ -217,9 +217,9 @@ products:
 
 ----
 ## Other Dependencies usages
-* [BoostedYAML](https://github.com/dejvokep/boosted-yaml) - The Best library 💗 for YAML configs
-* [Lombok](https://projectlombok.org/) - Awesome annotations for Java
-* [Triumph-GUI](https://github.com/TriumphTeam/triumph-gui) - Simple creation of guis
-* [IridiumColorAPI](https://github.com/Iridium-Development/IridiumColorAPI) - Great library for translating RGB messages
+  * [BoostedYAML](https://github.com/dejvokep/boosted-yaml) - The Best library 💗 for YAML configs
+  * [Lombok](https://projectlombok.org/) - Awesome annotations for Java
+  * [Triumph-GUI](https://github.com/TriumphTeam/triumph-gui) - Simple creation of guis
+  * [IridiumColorAPI](https://github.com/Iridium-Development/IridiumColorAPI) - Great library for translating RGB messages
 
 ----
