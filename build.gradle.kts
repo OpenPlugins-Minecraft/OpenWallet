@@ -18,6 +18,7 @@ repositories {
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     maven("https://repo.triumphteam.dev/snapshots/")
     maven("https://repo.extendedclip.com/content/repositories/placeholderapi/")
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -27,6 +28,7 @@ dependencies {
     compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("org.projectlombok:lombok:1.18.24")
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
     annotationProcessor("org.projectlombok:lombok:1.18.24")
     testCompileOnly("org.projectlombok:lombok:1.18.24")
     testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
