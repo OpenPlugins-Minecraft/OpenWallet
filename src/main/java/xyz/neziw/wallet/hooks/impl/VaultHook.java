@@ -6,15 +6,26 @@ import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import xyz.neziw.wallet.WalletPlugin;
+import xyz.neziw.wallet.hooks.IHook;
 import xyz.neziw.wallet.utilities.DataUtils;
 
 import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
-public class VaultHook extends Economy {
+public class VaultHook implements IHook, Economy {
 
-    private final WalletPlugin plugin;
+    private WalletPlugin plugin;
+
+    @Override
+    public void hook(WalletPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    @Override
+    public void unHook() {
+        throw new UnsupportedOperationException("Not supported yet."); // TODO : maybe do something with this ? !
+    }
 
     @Override
     public EconomyResponse bankBalance(String name) {
@@ -205,6 +216,11 @@ public class VaultHook extends Economy {
     @Override
     public boolean isEnabled() {
         return this.plugin != null;
+    }
+
+    @Override
+    public String getName() {
+        return null;
     }
 
     @Override

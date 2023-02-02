@@ -6,6 +6,7 @@ import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
 import xyz.neziw.wallet.hooks.impl.GadgetsMenuHook;
 import xyz.neziw.wallet.hooks.impl.PlaceholderHook;
+import xyz.neziw.wallet.hooks.impl.VaultHook;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +24,9 @@ public class HookManager {
         }
         if (config.getBoolean("hook-gadgets-menu")) {
             this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook());
+        }
+        if (config.getBoolean("hook-vault-api")) {
+            this.hooks.put(VaultHook.class, new VaultHook(this.plugin));
         }
         this.startHooks();
     }
