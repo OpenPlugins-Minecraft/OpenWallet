@@ -2,6 +2,7 @@ package xyz.neziw.wallet.hooks.impl;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
+import org.jetbrains.annotations.NotNull;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
 import xyz.neziw.wallet.utilities.DataUtils;
@@ -21,16 +22,19 @@ public class PlaceholderHook extends PlaceholderExpansion implements IHook {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    @NotNull
     @Override
     public String getIdentifier() {
         return "wallet";
     }
 
+    @NotNull
     @Override
     public String getAuthor() {
         return this.plugin.getDescription().getAuthors().toString();
     }
 
+    @NotNull
     @Override
     public String getVersion() {
         return this.plugin.getDescription().getVersion();
