@@ -34,13 +34,16 @@ hook-placeholder-api: true
 # Default: false
 hook-gadgets-menu: false
 
+# Whether OpenWallet should override Vault economy
+# Default: false
+hook-vault-api: false
+
 # Whether save task should run after plugin enable
 # This is useful in situations like crashes etc.
 # If you have this option disabled - player data like their balance
 # will only save in certain situations
 # Default: true
 auto-data-save: true
-
 
 # Configuration for commands aliases
 commands-aliases:
