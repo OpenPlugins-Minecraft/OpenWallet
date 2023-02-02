@@ -19,9 +19,9 @@ public class PlayerJoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
+        final Player player = event.getPlayer();
         this.userManager.createUser(player.getUniqueId());
-        WalletUser user = this.userManager.getUser(player.getUniqueId());
+        final WalletUser user = this.userManager.getUser(player.getUniqueId());
         user.setName(player.getName());
         this.databaseManager.getExecutor().execute(() -> {
             if (this.databaseManager.exists(player.getName())) {

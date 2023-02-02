@@ -57,7 +57,7 @@ public class WalletAdminCommand extends WCommand {
                     case "add":
                         if (DataUtils.exists(target)) {
                             try {
-                                double balance = Double.parseDouble(args[2]);
+                                final double balance = Double.parseDouble(args[2]);
                                 DataUtils.depositBalance(target, balance);
                                 sender.sendMessage(fix(this.messages.getString("balance-gave")
                                         .replace("{PLAYER}", target)
@@ -73,7 +73,7 @@ public class WalletAdminCommand extends WCommand {
                     case "set":
                         if (DataUtils.exists(target)) {
                             try {
-                                double balance = Double.parseDouble(args[2]);
+                                final double balance = Double.parseDouble(args[2]);
                                 DataUtils.setBalance(target, balance);
                                 sender.sendMessage(fix(this.messages.getString("balance-set")
                                         .replace("{PLAYER}", target)
@@ -89,8 +89,8 @@ public class WalletAdminCommand extends WCommand {
                     case "take":
                         if (DataUtils.exists(target)) {
                             try {
-                                double balance = Double.parseDouble(args[2]);
-                                double current = DataUtils.getBalance(target);
+                                final double balance = Double.parseDouble(args[2]);
+                                final double current = DataUtils.getBalance(target);
                                 if (current < balance) {
                                     sender.sendMessage(fix(this.messages.getString("errors.too-much-value")));
                                 } else {
@@ -124,7 +124,7 @@ public class WalletAdminCommand extends WCommand {
         if (args.length == 0 || args.length > 3) {
             return Collections.emptyList();
         }
-        List<String> matches = new ArrayList<>();
+        final List<String> matches = new ArrayList<>();
         if (args.length == 1) {
             String search = args[0].toLowerCase(Locale.ROOT);
             if ("panel".startsWith(search)) {
@@ -144,7 +144,7 @@ public class WalletAdminCommand extends WCommand {
             }
         }
         if (args.length == 2 && !args[0].equals("panel")) {
-            String search = args[1].toLowerCase(Locale.ROOT);
+            final String search = args[1].toLowerCase(Locale.ROOT);
             for (Player player : Bukkit.getOnlinePlayers()) {
                 if (player.getName().toLowerCase(Locale.ROOT).startsWith(search)) {
                     matches.add(player.getName());

@@ -17,8 +17,8 @@ public class PlayerQuitListener implements Listener {
 
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
-        Player player = event.getPlayer();
-        WalletUser user = this.userManager.getUser(player.getUniqueId());
+        final Player player = event.getPlayer();
+        final WalletUser user = this.userManager.getUser(player.getUniqueId());
         this.databaseManager.saveUser(user);
         this.userManager.removeUser(player.getUniqueId());
     }

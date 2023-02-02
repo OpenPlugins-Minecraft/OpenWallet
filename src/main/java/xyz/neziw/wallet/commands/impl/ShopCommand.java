@@ -28,7 +28,7 @@ public class ShopCommand extends WCommand {
     @Override
     public void exec(CommandSender sender, String[] args) {
         if (sender instanceof Player) {
-            Player player = (Player) sender;
+            final Player player = (Player) sender;
             if (args.length == 0) {
                 player.sendMessage(fix(this.messages.getString("errors.incorrect-usage")));
             } else {
@@ -48,8 +48,8 @@ public class ShopCommand extends WCommand {
         if (args.length != 1) {
             return Collections.emptyList();
         }
-        List<String> matches = new ArrayList<>();
-        String search = args[0].toLowerCase(Locale.ROOT);
+        final List<String> matches = new ArrayList<>();
+        final String search = args[0].toLowerCase(Locale.ROOT);
         for (String shop : this.shopsLoader.getShops().keySet()) {
             if (shop.toLowerCase(Locale.ROOT).startsWith(search)) {
                 matches.add(shop);

@@ -26,8 +26,8 @@ public class WalletCommand extends WCommand {
     @Override
     public void exec(CommandSender sender, String[] args) {
         if (sender instanceof Player) {
-            Player player = (Player) sender;
-            WalletUser user = this.userManager.getUser(player.getUniqueId());
+            final Player player = (Player) sender;
+            final WalletUser user = this.userManager.getUser(player.getUniqueId());
             for (String string : this.messages.getStringList("wallet-command")) {
                 player.sendMessage(fix(string).replace("{BALANCE}", String.valueOf(user.getBalance())));
             }
