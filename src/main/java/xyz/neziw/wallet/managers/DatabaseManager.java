@@ -31,8 +31,7 @@ public class DatabaseManager {
     private final String database;
 
     @Getter
-    private final ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(),
-            new ThreadFactoryBuilder().setNameFormat("OpenWallet-Plugin-Pool-%d").build());
+    private final ExecutorService executor;
 
     public DatabaseManager(WalletPlugin plugin, YamlDocument config) {
         this.plugin = plugin;
@@ -42,6 +41,7 @@ public class DatabaseManager {
         this.user = config.getString("database-settings.user");
         this.password = config.getString("database-settings.password");
         this.database = config.getString("database-settings.database");
+        this.executor = Executors.newSingleThreadExecutor(new ThreadFactoryBuilder().setNameFormat("OpenWallet-Plugin-Pool-%d").build());
         this.createTables();
     }
 
