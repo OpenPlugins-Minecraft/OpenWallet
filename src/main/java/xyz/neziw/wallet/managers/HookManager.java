@@ -2,6 +2,8 @@ package xyz.neziw.wallet.managers;
 
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.Getter;
+import net.milkbowl.vault.economy.Economy;
+import org.bukkit.plugin.ServicePriority;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
 import xyz.neziw.wallet.hooks.impl.GadgetsMenuHook;
@@ -26,7 +28,9 @@ public class HookManager {
             this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook());
         }
         if (config.getBoolean("hook-vault-api")) {
-            this.hooks.put(VaultHook.class, new VaultHook(this.plugin));
+            final VaultHook vaultHook = new VaultHook(this.plugin);
+            this.plugin.getServer().getServicesManager().register(Economy.class, vaultHook, this.plugin, ServicePriority.High);
+            this.hooks.put(VaultHook.class, vaultHook);
         }
         this.startHooks();
     }
