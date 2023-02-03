@@ -78,7 +78,6 @@ public class DatabaseManager {
                 statement = this.connection.prepareStatement("CREATE TABLE IF NOT EXISTS wallet_data (uuid VARCHAR(100) PRIMARY KEY, " +
                         "name VARCHAR(16), balance DOUBLE)");
                 statement.execute();
-                this.disconnect();
             } catch (SQLException exception) {
                 exception.printStackTrace();
                 this.disconnect();
@@ -106,7 +105,6 @@ public class DatabaseManager {
                 statement.setString(2, name);
                 statement.setDouble(3, 0.0);
                 statement.execute();
-                this.disconnect();
             } catch (SQLException exception) {
                 exception.printStackTrace();
                 this.disconnect();
@@ -126,7 +124,6 @@ public class DatabaseManager {
                     user.setName(result.getString("name"));
                     user.setBalance(result.getDouble("balance"));
                 }
-                this.disconnect();
             } catch (SQLException exception) {
                 exception.printStackTrace();
                 this.disconnect();
@@ -144,7 +141,6 @@ public class DatabaseManager {
                 statement.setDouble(2, user.getBalance());
                 statement.setString(3, user.getUuid().toString());
                 statement.executeUpdate();
-                this.disconnect();
             } catch (SQLException exception) {
                 exception.printStackTrace();
                 this.disconnect();
@@ -172,7 +168,6 @@ public class DatabaseManager {
                 statement.setDouble(1, balance);
                 statement.setString(2, name);
                 statement.executeUpdate();
-                this.disconnect();
             } catch (SQLException exception) {
                 exception.printStackTrace();
                 this.disconnect();
