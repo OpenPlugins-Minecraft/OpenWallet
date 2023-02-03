@@ -1,5 +1,6 @@
 package xyz.neziw.wallet.commands.impl;
 
+import com.google.common.collect.ImmutableList;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
@@ -121,6 +122,7 @@ public class WalletAdminCommand extends WCommand {
 
     @Override
     public List<String> complete(CommandSender sender, String[] args) {
+        if (!sender.hasPermission("openwallet.admin")) return ImmutableList.of();
         if (args.length == 0 || args.length > 3) {
             return Collections.emptyList();
         }
