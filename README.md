@@ -29,7 +29,7 @@ Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWall
 ![Gradle](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/built-with/gradle_vector.svg?raw=true)
 </br>
 ![Bukkit](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/bukkit_vector.svg?raw=true)
-![Spigot](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/spigot_vector.svg?raw=true)
+[![Spigot](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/spigot_vector.svg?raw=true)](https://www.spigotmc.org/resources/openwallet-economy-plugin.107826/)
 ![Paper](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/supported/paper_vector.svg?raw=true)
 </div>
 
@@ -215,6 +215,7 @@ products:
 ----
 ## Links
 * [Discord Server](https://discord.gg/BkRHdxZrvM)
+* [Spigot](https://www.spigotmc.org/resources/openwallet-economy-plugin.107826/)
 * [Modrinth](https://modrinth.com/plugin/openwallet)
 * [Polymart](https://polymart.org/resource/openwallet-economy-plugin.3374)
 * [Wiki](https://github.com/neziw/OpenWallet/wiki)
