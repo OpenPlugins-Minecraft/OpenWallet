@@ -21,7 +21,6 @@ import xyz.neziw.wallet.managers.CommandManager;
 import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.HookManager;
 import xyz.neziw.wallet.managers.UserManager;
-import xyz.neziw.wallet.objects.WalletUser;
 import xyz.neziw.wallet.tasks.SaveTaskRunnable;
 
 import java.io.File;
@@ -90,9 +89,8 @@ public class WalletPlugin extends JavaPlugin {
     @Override
     public void onDisable() {
         if (this.userManager != null && this.databaseManager != null) {
-            for (WalletUser user : this.userManager.getUsers().values()) {
-                this.databaseManager.saveUser(user);
-            }
+            this.databaseManager.getExecutor().shutdown();
+            this.userManager.getUsers().values().forEach(this.databaseManager::saveUser);
         }
     }
 
