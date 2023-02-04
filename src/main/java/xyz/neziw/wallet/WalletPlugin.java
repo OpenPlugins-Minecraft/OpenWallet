@@ -73,7 +73,7 @@ public class WalletPlugin extends JavaPlugin {
         this.shopsLoader = new ShopsLoader(this);
         final PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
-        pluginManager.registerEvents(new PlayerJoinListener(this.userManager, this.databaseManager, this.mainConfig), this);
+        pluginManager.registerEvents(new PlayerJoinListener(this.userManager, this.databaseManager, this.mainConfig, this), this);
         pluginManager.registerEvents(PlayerInput.handle(), this);
         final CommandManager commandManager = new CommandManager(this);
         commandManager.registerCommand(new WalletCommand(this.userManager, this.mainConfig, this.messagesConfig));
@@ -82,11 +82,12 @@ public class WalletPlugin extends JavaPlugin {
         if (this.mainConfig.getBoolean("auto-data-save")) {
             getServer().getScheduler().runTaskTimer(this, new SaveTaskRunnable(this.userManager, this.databaseManager),
                     0L, 300 * 20L
-                    );
+            );
         }
         final int pluginId = 17633;
         new Metrics(this, pluginId);
         this.exampleShop();
+        updateCheck();
     }
 
     @Override
@@ -111,5 +112,17 @@ public class WalletPlugin extends JavaPlugin {
                 exception.printStackTrace();
             }
         }
+    }
+
+    private void updateCheck() {
+        new UpdateChecker(this, 107826).getVersion(version -> {
+            if (this.getDescription().getVersion().equals(version)) {
+                getLogger().info("There is not a new update available.");
+
+            } else {
+                getLogger().info("There is a new update available.");
+                getLogger().info("Your version " + this.getDescription().getVersion() + " new version " + version);
+            }
+        });
     }
 }
