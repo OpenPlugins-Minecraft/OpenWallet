@@ -20,6 +20,7 @@
 Welcome to the **OpenWallet** plugin! This is a brand new economy plugin with a lot of features (custom shops, hooks etc.)
 
 Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWallet/wiki) page!
+
 [Join our Discord Server](https://discord.gg/BkRHdxZrvM)
 
 [![Polymart](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/polymart_vector.svg?raw=true)](https://polymart.org/resource/openwallet-economy-plugin.3374)
