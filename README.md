@@ -42,7 +42,8 @@ Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWall
   * Option to make only once-buy items
   * SQLite and MySQL database support
   * Balance command for players
-  * PlaceholderAPI support
+  * Vault and PlaceholderAPI hook
+  * Custom aliases for plugin commands
 
 ----
 ## Default configuration files
