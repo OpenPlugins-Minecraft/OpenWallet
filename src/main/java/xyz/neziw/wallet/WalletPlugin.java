@@ -23,6 +23,8 @@ import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.HookManager;
 import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.tasks.SaveTaskRunnable;
+import xyz.neziw.wallet.updatechecker.AdminUpDateInfoListener;
+import xyz.neziw.wallet.updatechecker.UpdateChecker;
 
 import java.io.File;
 import java.io.IOException;
@@ -53,6 +55,7 @@ public class WalletPlugin extends JavaPlugin {
     @SneakyThrows
     @Override
     public void onEnable() {
+        upDateCheck();
         instance = this;
         this.mainConfig = YamlDocument.create(new File(getDataFolder(), "config.yml"), getResource("config.yml"),
                 GeneralSettings.builder().setUseDefaults(false).build(),
@@ -75,6 +78,7 @@ public class WalletPlugin extends JavaPlugin {
         pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
         pluginManager.registerEvents(new PlayerJoinListener(this.userManager, this.databaseManager, this.mainConfig), this);
         pluginManager.registerEvents(PlayerInput.handle(), this);
+        pluginManager.registerEvents(new AdminUpDateInfoListener(this), this);
         final CommandManager commandManager = new CommandManager(this);
         commandManager.registerCommand(new WalletCommand(this.userManager, this.mainConfig, this.messagesConfig));
         commandManager.registerCommand(new WalletAdminCommand(this.userManager, this.mainConfig, this.messagesConfig));
@@ -111,5 +115,19 @@ public class WalletPlugin extends JavaPlugin {
                 exception.printStackTrace();
             }
         }
+    }
+    private void upDateCheck(){
+
+        new UpdateChecker(this, 107826).getVersion(version -> {
+            if (this.getDescription().getVersion().equals(version)) {
+                getLogger().info("There is not a new update available.");
+
+            } else {
+                getLogger().info ("There is a new update available.");
+                getLogger().info("Your version " + this.getDescription().getVersion() + " new version " + version);
+
+            }
+        });
+
     }
 }
