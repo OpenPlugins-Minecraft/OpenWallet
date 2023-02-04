@@ -14,7 +14,7 @@ import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.objects.WalletUser;
-import xyz.neziw.wallet.UpdateChecker;
+import xyz.neziw.wallet.basic.UpdateChecker;
 import xyz.neziw.wallet.utilities.ColorUtils;
 
 @AllArgsConstructor

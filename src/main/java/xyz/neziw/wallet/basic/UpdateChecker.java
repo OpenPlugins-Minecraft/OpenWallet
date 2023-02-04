@@ -1,4 +1,4 @@
-package xyz.neziw.wallet;
+package xyz.neziw.wallet.basic;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

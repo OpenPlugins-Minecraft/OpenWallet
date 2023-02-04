@@ -12,6 +12,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.neziw.wallet.basic.Metrics;
 import xyz.neziw.wallet.basic.PlayerInput;
+import xyz.neziw.wallet.basic.UpdateChecker;
 import xyz.neziw.wallet.commands.impl.ShopCommand;
 import xyz.neziw.wallet.commands.impl.WalletAdminCommand;
 import xyz.neziw.wallet.commands.impl.WalletCommand;
