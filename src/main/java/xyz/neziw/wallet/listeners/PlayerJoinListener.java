@@ -20,15 +20,13 @@ import xyz.neziw.wallet.utilities.ColorUtils;
 @AllArgsConstructor
 public class PlayerJoinListener implements Listener {
 
+    private final WalletPlugin plugin;
     private final UserManager userManager;
     private final DatabaseManager databaseManager;
     private final YamlDocument config;
-    private final WalletPlugin plugin;
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
-        final String prefix = "&b[&fOpen&aWallet&b] ";
-        final int resourceId = 107826;
         this.userManager.createUser(player.getUniqueId());
         final WalletUser user = this.userManager.getUser(player.getUniqueId());
         user.setName(player.getName());
@@ -44,10 +42,10 @@ public class PlayerJoinListener implements Listener {
             user.setBalance(this.config.getDouble("start-balance"));
         }
         if (player.isOp()){
-            new UpdateChecker(plugin, resourceId).getVersion(version -> {
+            new UpdateChecker(plugin, 107826).getVersion(version -> {
                 if (!(plugin.getDescription().getVersion().equals(version))) {
-                    player.sendMessage(ColorUtils.fix(prefix + "&bThere is a new update available."));
-                    TextComponent message = new TextComponent(ColorUtils.fix(prefix + "&bYour version &c" + plugin.getDescription().getVersion() + "&b new version &c" + version));
+                    player.sendMessage(ColorUtils.fix("&b[&fOpen&aWallet&b] &bThere is a new update available."));
+                    TextComponent message = new TextComponent(ColorUtils.fix("&b[&fOpen&aWallet&b] Your version &c" + plugin.getDescription().getVersion() + "&b new version &c" + version));
                     message.setClickEvent(new ClickEvent(ClickEvent.Action.COPY_TO_CLIPBOARD, "https://www.spigotmc.org/resources/107826"));
                     message.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder("Copy download link").create()));
                     player.spigot().sendMessage(message);
