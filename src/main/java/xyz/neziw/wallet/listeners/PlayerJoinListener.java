@@ -24,6 +24,7 @@ public class PlayerJoinListener implements Listener {
     private final UserManager userManager;
     private final DatabaseManager databaseManager;
     private final YamlDocument config;
+    
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();

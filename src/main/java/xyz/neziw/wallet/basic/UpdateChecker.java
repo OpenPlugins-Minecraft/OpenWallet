@@ -1,5 +1,6 @@
 package xyz.neziw.wallet.basic;
 
+import lombok.AllArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,15 +10,11 @@ import java.net.URL;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
-// From: https://www.spigotmc.org/wiki/creating-an-update-checker-that-checks-for-updates
+@AllArgsConstructor
 public class UpdateChecker {
 
     private final JavaPlugin plugin;
     private final int resourceId;
-    public UpdateChecker(JavaPlugin plugin, int resourceId) {
-        this.plugin = plugin;
-        this.resourceId = resourceId;
-    }
 
     public void getVersion(final Consumer<String> consumer) {
         Bukkit.getScheduler().runTaskAsynchronously(this.plugin, () -> {
