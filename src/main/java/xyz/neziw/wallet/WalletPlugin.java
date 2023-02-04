@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.neziw.wallet.basic.Metrics;
 import xyz.neziw.wallet.basic.PlayerInput;
 import xyz.neziw.wallet.commands.impl.ShopCommand;
 import xyz.neziw.wallet.commands.impl.WalletAdminCommand;
@@ -83,6 +84,8 @@ public class WalletPlugin extends JavaPlugin {
                     0L, 300 * 20L
                     );
         }
+        final int pluginId = 17633;
+        new Metrics(this, pluginId);
         this.exampleShop();
     }
 
