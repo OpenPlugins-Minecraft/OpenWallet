@@ -14,12 +14,13 @@
 ![Latest Tag](https://img.shields.io/github/v/tag/neziw/OpenWallet?label=LATEST%20TAG&style=for-the-badge)
 [![Forks](https://img.shields.io/github/forks/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/stargazers)   </br>
-[![Discord](https://img.shields.io/discord/1033673652077592636?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/mF3TehkeG3)
+[![Discord](https://img.shields.io/discord/1071413512414449666?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/BkRHdxZrvM)
 [![Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3D132Development%26type%3Dpatrons&style=for-the-badge)](https://patreon.com/132Development)
 
 Welcome to the **OpenWallet** plugin! This is a brand new economy plugin with a lot of features (custom shops, hooks etc.)
 
 Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWallet/wiki) page!
+[Join our Discord Server](https://discord.gg/BkRHdxZrvM)
 
 [![Polymart](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/polymart_vector.svg?raw=true)](https://polymart.org/resource/openwallet-economy-plugin.3374)
 [![Modrinth](https://github.com/intergrav/devins-badges/blob/v2/assets/cozy/available/modrinth_vector.svg?raw=true)](https://modrinth.com/mod/openwallet)</br>
@@ -212,6 +213,7 @@ products:
 
 ----
 ## Links
+* [Discord Server](https://discord.gg/BkRHdxZrvM)
 * [Modrinth](https://modrinth.com/plugin/openwallet)
 * [Polymart](https://polymart.org/resource/openwallet-economy-plugin.3374)
 * [Wiki](https://github.com/neziw/OpenWallet/wiki)
