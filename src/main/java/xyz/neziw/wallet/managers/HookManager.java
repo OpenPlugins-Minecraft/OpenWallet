@@ -1,5 +1,6 @@
 package xyz.neziw.wallet.managers;
 
+import com.yapzhenyie.GadgetsMenu.economy.GEconomyProvider;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.Getter;
 import net.milkbowl.vault.economy.Economy;
@@ -25,7 +26,9 @@ public class HookManager {
             this.hooks.put(PlaceholderHook.class, new PlaceholderHook());
         }
         if (config.getBoolean("hook-gadgets-menu")) {
-            this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook(this.plugin));
+            final GadgetsMenuHook gadgetsMenuHook = new GadgetsMenuHook(this.plugin);
+            GEconomyProvider.setMysteryDustStorage(gadgetsMenuHook);
+            this.hooks.put(GadgetsMenuHook.class, gadgetsMenuHook);
         }
         if (config.getBoolean("hook-vault-api")) {
             final VaultHook vaultHook = new VaultHook(this.plugin);
