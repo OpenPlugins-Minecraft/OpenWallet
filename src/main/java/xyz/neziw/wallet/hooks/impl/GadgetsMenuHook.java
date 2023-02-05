@@ -14,7 +14,7 @@ public class GadgetsMenuHook extends GEconomyProvider implements IHook {
 
     @Override
     public void hook(WalletPlugin plugin) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        
     }
 
     @Override
