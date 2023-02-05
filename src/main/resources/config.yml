@@ -1,6 +1,9 @@
 # Configuration file version (don't change manually)
 config-version: 2
 
+#Update checker configurartion
+update-checker: true
+
 # Database configuration
 database-settings:
   # Type of database (MySQL/SQLite)
