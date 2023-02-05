@@ -24,7 +24,7 @@ repositories {
 dependencies {
     implementation("dev.dejvokep:boosted-yaml:1.3.1")
     implementation("dev.triumphteam:triumph-gui:3.1.4")
-    compileOnly(files("/libs/GadgetsMenu.jar"))
+    compileOnly(files("libs/GadgetsMenu.jar"))
     compileOnly("me.clip:placeholderapi:2.11.2")
     compileOnly("org.projectlombok:lombok:1.18.26")
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")

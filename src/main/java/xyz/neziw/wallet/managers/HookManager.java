@@ -25,7 +25,7 @@ public class HookManager {
             this.hooks.put(PlaceholderHook.class, new PlaceholderHook());
         }
         if (config.getBoolean("hook-gadgets-menu")) {
-            this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook());
+            this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook(this.plugin));
         }
         if (config.getBoolean("hook-vault-api")) {
             final VaultHook vaultHook = new VaultHook(this.plugin);
