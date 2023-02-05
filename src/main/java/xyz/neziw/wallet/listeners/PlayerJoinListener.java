@@ -25,6 +25,7 @@ public class PlayerJoinListener implements Listener {
     private final DatabaseManager databaseManager;
     private final YamlDocument config;
     
+    @SuppressWarnings("deprecation")
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
         final Player player = event.getPlayer();
