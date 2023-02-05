@@ -116,7 +116,7 @@ public class WalletPlugin extends JavaPlugin {
     }
 
     private void updateCheck() {
-        if (mainConfig.getBoolean("update-checker")) {
+        if (this.mainConfig.getBoolean("update-checker")) {
             new UpdateChecker(this, 107826).getVersion(version -> {
                 if (this.getDescription().getVersion().equals(version)) {
                     getLogger().info("There is not a new update available.");

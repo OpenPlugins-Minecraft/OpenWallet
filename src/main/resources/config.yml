@@ -1,7 +1,7 @@
 # Configuration file version (don't change manually)
 config-version: 3
 
-#Whether update checker should be enabled
+# Whether update checker should be enabled
 update-checker: true
 
 # Database configuration

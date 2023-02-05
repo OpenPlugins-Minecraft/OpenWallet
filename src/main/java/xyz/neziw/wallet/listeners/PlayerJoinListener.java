@@ -43,7 +43,7 @@ public class PlayerJoinListener implements Listener {
         if (!player.hasPlayedBefore()) {
             user.setBalance(this.config.getDouble("start-balance"));
         }
-        if (config.getBoolean("update-checker")) {
+        if (this.config.getBoolean("update-checker")) {
             if (player.isOp()) {
                 new UpdateChecker(plugin, 107826).getVersion(version -> {
                     if (!(plugin.getDescription().getVersion().equals(version))) {
