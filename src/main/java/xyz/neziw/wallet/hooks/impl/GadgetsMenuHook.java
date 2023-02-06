@@ -14,7 +14,6 @@ public class GadgetsMenuHook extends GEconomyProvider implements IHook {
 
     @Override
     public void hook(WalletPlugin plugin) {
-        
     }
 
     @Override
