@@ -85,8 +85,7 @@ public class WalletPlugin extends JavaPlugin {
                     0L, 300 * 20L
             );
         }
-        final int pluginId = 17633;
-        new Metrics(this, pluginId);
+        new Metrics(this, 17633);
         this.exampleShop();
         updateCheck();
     }
