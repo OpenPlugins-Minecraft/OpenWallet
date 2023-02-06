@@ -115,15 +115,14 @@ public class WalletPlugin extends JavaPlugin {
     }
 
     private void updateCheck() {
-        if (this.mainConfig.getBoolean("update-checker")) {
-            new UpdateChecker(this, 107826).getVersion(version -> {
-                if (this.getDescription().getVersion().equals(version)) {
-                    this.getLogger().info("There is not a new update available.");
-                } else {
-                    this.getLogger().info("There is a new update available.");
-                    this.getLogger().info("Your version " + this.getDescription().getVersion() + " new version " + version);
-                }
-            });
-        }
+        if (!this.mainConfig.getBoolean("update-checker")) return;
+        new UpdateChecker(this, 107826).getVersion(version -> {
+            if (this.getDescription().getVersion().equals(version)) {
+                this.getLogger().info("There is not a new update available.");
+            } else {
+                this.getLogger().info("There is a new update available.");
+                this.getLogger().info("Your version " + this.getDescription().getVersion() + " new version " + version);
+            }
+        });
     }
 }
