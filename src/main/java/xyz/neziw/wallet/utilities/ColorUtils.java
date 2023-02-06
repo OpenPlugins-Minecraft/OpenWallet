@@ -3,8 +3,8 @@ package xyz.neziw.wallet.utilities;
 import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @UtilityClass
 public class ColorUtils {
@@ -13,11 +13,7 @@ public class ColorUtils {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
-    public static List<String> fixList(List<String> messageList) {
-        final List<String> list = new ArrayList<>();
-        for (String string : messageList) {
-            list.add(fix(string));
-        }
-        return list;
+    public static List<String> fixList(List<String> messages) {
+        return messages.stream().map(ColorUtils::fix).collect(Collectors.toList());
     }
 }
