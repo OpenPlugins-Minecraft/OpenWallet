@@ -103,7 +103,6 @@ public class WalletPlugin extends JavaPlugin {
     private void exampleShop() {
         final File file = new File(getDataFolder(), "shops");
         if (!file.isDirectory()) throw new UnsupportedOperationException("Shops folder is not directory");
-
         final File[] files = file.listFiles();
         if (files == null || files.length == 0) {
             try (InputStream inputStream = getClass().getResourceAsStream("/shops/example-shop.yml")) {
@@ -119,10 +118,10 @@ public class WalletPlugin extends JavaPlugin {
         if (this.mainConfig.getBoolean("update-checker")) {
             new UpdateChecker(this, 107826).getVersion(version -> {
                 if (this.getDescription().getVersion().equals(version)) {
-                    getLogger().info("There is not a new update available.");
+                    this.getLogger().info("There is not a new update available.");
                 } else {
-                    getLogger().info("There is a new update available.");
-                    getLogger().info("Your version " + this.getDescription().getVersion() + " new version " + version);
+                    this.getLogger().info("There is a new update available.");
+                    this.getLogger().info("Your version " + this.getDescription().getVersion() + " new version " + version);
                 }
             });
         }
