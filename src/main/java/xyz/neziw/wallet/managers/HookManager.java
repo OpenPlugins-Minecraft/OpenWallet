@@ -31,7 +31,7 @@ public class HookManager {
             this.hooks.put(GadgetsMenuHook.class, gadgetsMenuHook);
         }
         if (config.getBoolean("hook-vault-api")) {
-            final VaultHook vaultHook = new VaultHook(this.plugin);
+            final VaultHook vaultHook = new VaultHook(this.plugin, this.plugin.getDataManager());
             this.plugin.getServer().getServicesManager().register(Economy.class, vaultHook, this.plugin, ServicePriority.High);
             this.hooks.put(VaultHook.class, vaultHook);
         }

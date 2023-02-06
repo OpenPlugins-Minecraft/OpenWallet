@@ -1,21 +1,19 @@
-package xyz.neziw.wallet.utilities;
+package xyz.neziw.wallet.managers;
 
-import lombok.experimental.UtilityClass;
+import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.objects.WalletUser;
 
-@UtilityClass
-public class DataUtils {
+@RequiredArgsConstructor
+public class DataManager {
 
-    private static final WalletPlugin plugin = WalletPlugin.getInstance();
-    private static final UserManager userManager = plugin.getUserManager();
-    private static final DatabaseManager databaseManager = plugin.getDatabaseManager();
+    private final UserManager userManager;
+    private final DatabaseManager databaseManager;
 
-    public static void setBalance(String name, double balance) {
+    public void setBalance(String name, double balance) {
         final Player player = Bukkit.getPlayer(name);
         if (player != null) {
             final WalletUser user = userManager.getUser(player.getUniqueId());
@@ -26,7 +24,7 @@ public class DataUtils {
         }
     }
 
-    public static void depositBalance(String name, double balance) {
+    public void depositBalance(String name, double balance) {
         final Player player = Bukkit.getPlayer(name);
         if (player != null) {
             final WalletUser user = userManager.getUser(player.getUniqueId());
@@ -37,7 +35,7 @@ public class DataUtils {
         }
     }
 
-    public static void withDrawBalance(String name, double balance) {
+    public void withDrawBalance(String name, double balance) {
         final Player player = Bukkit.getPlayer(name);
         if (player != null) {
             final WalletUser user = userManager.getUser(player.getUniqueId());
@@ -48,7 +46,7 @@ public class DataUtils {
         }
     }
 
-    public static double getBalance(String name) {
+    public double getBalance(String name) {
         final Player player = Bukkit.getPlayer(name);
         if (player != null) {
             final WalletUser user = userManager.getUser(player.getUniqueId());
@@ -58,7 +56,7 @@ public class DataUtils {
         }
     }
 
-    public static boolean exists(String name) {
+    public boolean exists(String name) {
         return databaseManager.exists(name);
     }
 }

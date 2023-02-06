@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import xyz.neziw.wallet.commands.WCommand;
 import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.menu.ManagerMenu;
-import xyz.neziw.wallet.utilities.DataUtils;
+import xyz.neziw.wallet.managers.DataManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,11 +22,13 @@ public class WalletAdminCommand extends WCommand {
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final UserManager userManager;
     private final YamlDocument messages;
+    private final DataManager dataManager;
 
-    public WalletAdminCommand(UserManager userManager, YamlDocument config, YamlDocument messages) {
+    public WalletAdminCommand(UserManager userManager, YamlDocument config, YamlDocument messages, DataManager dataManager) {
         super(config.getString("commands-aliases.wallet-admin.command"), "", config.getStringList("commands-aliases.wallet-admin.aliases"));
         this.userManager = userManager;
         this.messages = messages;
+        this.dataManager = dataManager;
     }
 
     @Override
@@ -44,10 +46,10 @@ public class WalletAdminCommand extends WCommand {
                 }
             } else if (args.length == 2 && args[0].equals("check")) {
                 final String target = args[1];
-                if (DataUtils.exists(target)) {
+                if (this.dataManager.exists(target)) {
                     sender.sendMessage(fix(this.messages.getString("balance-check")
                             .replace("{PLAYER}", target)
-                            .replace("{BALANCE}", String.valueOf(DataUtils.getBalance(target)))
+                            .replace("{BALANCE}", String.valueOf(this.dataManager.getBalance(target)))
                     ));
                 } else {
                     sender.sendMessage(fix(this.messages.getString("errors.unknown-user")));
@@ -56,10 +58,10 @@ public class WalletAdminCommand extends WCommand {
                 final String target = args[1];
                 switch (args[0]) {
                     case "add":
-                        if (DataUtils.exists(target)) {
+                        if (this.dataManager.exists(target)) {
                             try {
                                 final double balance = Double.parseDouble(args[2]);
-                                DataUtils.depositBalance(target, balance);
+                                this.dataManager.depositBalance(target, balance);
                                 sender.sendMessage(fix(this.messages.getString("balance-gave")
                                         .replace("{PLAYER}", target)
                                         .replace("{BALANCE}", String.valueOf(balance))
@@ -72,10 +74,10 @@ public class WalletAdminCommand extends WCommand {
                         }
                         break;
                     case "set":
-                        if (DataUtils.exists(target)) {
+                        if (this.dataManager.exists(target)) {
                             try {
                                 final double balance = Double.parseDouble(args[2]);
-                                DataUtils.setBalance(target, balance);
+                                this.dataManager.setBalance(target, balance);
                                 sender.sendMessage(fix(this.messages.getString("balance-set")
                                         .replace("{PLAYER}", target)
                                         .replace("{BALANCE}", String.valueOf(balance))
@@ -88,14 +90,14 @@ public class WalletAdminCommand extends WCommand {
                         }
                         break;
                     case "take":
-                        if (DataUtils.exists(target)) {
+                        if (this.dataManager.exists(target)) {
                             try {
                                 final double balance = Double.parseDouble(args[2]);
-                                final double current = DataUtils.getBalance(target);
+                                final double current = this.dataManager.getBalance(target);
                                 if (current < balance) {
                                     sender.sendMessage(fix(this.messages.getString("errors.too-much-value")));
                                 } else {
-                                    DataUtils.withDrawBalance(target, balance);
+                                    this.dataManager.withDrawBalance(target, balance);
                                     sender.sendMessage(fix(this.messages.getString("balance-took")
                                             .replace("{PLAYER}", target)
                                             .replace("{BALANCE}", String.valueOf(balance))

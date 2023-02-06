@@ -5,15 +5,17 @@ import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
-import xyz.neziw.wallet.utilities.DataUtils;
+import xyz.neziw.wallet.managers.DataManager;
 
 public class PlaceholderHook extends PlaceholderExpansion implements IHook {
 
     private WalletPlugin plugin;
+    private DataManager dataManager;
 
     @Override
     public void hook(WalletPlugin plugin) {
         this.plugin = plugin;
+        this.dataManager = plugin.getDataManager();
         this.register();
     }
 
@@ -48,7 +50,7 @@ public class PlaceholderHook extends PlaceholderExpansion implements IHook {
     @Override
     public String onRequest(OfflinePlayer p, String params) {
         if (params.equals("balance")) {
-            return String.valueOf(DataUtils.getBalance(p.getName()));
+            return String.valueOf(this.dataManager.getBalance(p.getName()));
         }
         return "UNKNOWN_PLACEHOLDER_OR_PLAYER";
     }

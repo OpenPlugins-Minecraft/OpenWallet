@@ -24,6 +24,7 @@ import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.HookManager;
 import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.tasks.SaveTaskRunnable;
+import xyz.neziw.wallet.managers.DataManager;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,6 +50,8 @@ public class WalletPlugin extends JavaPlugin {
     private HookManager hookManager;
     @Getter
     private ShopsLoader shopsLoader;
+    @Getter
+    private DataManager dataManager;
 
     @SuppressWarnings("ConstantConditions")
     @SneakyThrows
@@ -72,6 +75,7 @@ public class WalletPlugin extends JavaPlugin {
         this.databaseManager = new DatabaseManager(this, this.mainConfig);
         this.hookManager = new HookManager(this, this.mainConfig);
         this.shopsLoader = new ShopsLoader(this);
+        this.dataManager = new DataManager(this.userManager, this.databaseManager);
         final PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
         pluginManager.registerEvents(new PlayerJoinListener(this ,this.userManager, this.databaseManager, this.mainConfig), this);

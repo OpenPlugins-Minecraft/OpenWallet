@@ -14,7 +14,7 @@ import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.objects.Product;
 import xyz.neziw.wallet.objects.Shop;
 import xyz.neziw.wallet.objects.WalletUser;
-import xyz.neziw.wallet.utilities.DataUtils;
+import xyz.neziw.wallet.managers.DataManager;
 
 import java.util.List;
 
@@ -28,6 +28,7 @@ public class ConfirmationMenu {
     private final YamlDocument messages = plugin.getMessagesConfig();
     @SuppressWarnings("FieldCanBeLocal")
     private final UserManager userManager = plugin.getUserManager();
+    private final DataManager dataManager = plugin.getDataManager();
 
     private final Product product;
     private final Shop shop;
@@ -64,7 +65,7 @@ public class ConfirmationMenu {
                                 .replace("{PRODUCT}", this.product.getName())
                         ));
                         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 8);
-                        DataUtils.withDrawBalance(player.getName(), product.getCost());
+                        this.dataManager.withDrawBalance(player.getName(), product.getCost());
                         this.runCommands(this.product.getCommands(), player);
                     }
                 });

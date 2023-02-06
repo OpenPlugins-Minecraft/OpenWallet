@@ -7,7 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
-import xyz.neziw.wallet.utilities.DataUtils;
+import xyz.neziw.wallet.managers.DataManager;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,6 +16,7 @@ import java.util.UUID;
 public class VaultHook implements IHook, Economy {
 
     private WalletPlugin plugin;
+    private DataManager dataManager;
 
     @Override
     public void hook(WalletPlugin plugin) {
@@ -99,7 +100,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse depositPlayer(OfflinePlayer player, double amount) {
-        DataUtils.depositBalance(player.getName(), amount);
+        this.dataManager.depositBalance(player.getName(), amount);
         return new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success");
     }
 
@@ -125,17 +126,17 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public double getBalance(OfflinePlayer player) {
-        return DataUtils.getBalance(player.getName());
+        return this.dataManager.getBalance(player.getName());
     }
 
     @Override
     public double getBalance(OfflinePlayer player, String world) {
-        return DataUtils.getBalance(player.getName());
+        return this.dataManager.getBalance(player.getName());
     }
 
     @Override
     public double getBalance(String playerName) {
-        return (Bukkit.getPlayer(playerName) != null) ? DataUtils.getBalance(playerName) : 0.0D;
+        return (Bukkit.getPlayer(playerName) != null) ? this.dataManager.getBalance(playerName) : 0.0D;
     }
 
     @Override
@@ -155,7 +156,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public boolean has(OfflinePlayer player, double amount) {
-        return DataUtils.getBalance(player.getName()) >= amount;
+        return this.dataManager.getBalance(player.getName()) >= amount;
     }
 
     @Override
@@ -231,7 +232,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse withdrawPlayer(OfflinePlayer player, double amount) {
-        DataUtils.withDrawBalance(player.getName(), amount);
+        this.dataManager.withDrawBalance(player.getName(), amount);
         return (getBalance(player) >= amount ? new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success") : new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.FAILURE, "Error"));
     }
 
@@ -242,7 +243,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse withdrawPlayer(OfflinePlayer player, String worldName, double amount) {
-        DataUtils.withDrawBalance(player.getName(), amount);
+        this.dataManager.withDrawBalance(player.getName(), amount);
         return (getBalance(player) >= amount ? new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success") : new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.FAILURE, "Error"));
     }
 }
