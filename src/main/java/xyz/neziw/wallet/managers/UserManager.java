@@ -3,13 +3,14 @@ package xyz.neziw.wallet.managers;
 import lombok.Getter;
 import xyz.neziw.wallet.objects.WalletUser;
 
-import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class UserManager {
 
     @Getter
-    private final HashMap<UUID, WalletUser> users = new HashMap<>();
+    private final Map<UUID, WalletUser> users = new ConcurrentHashMap<>();
 
     @SuppressWarnings("UnusedReturnValue")
     public WalletUser createUser(UUID uuid) {
