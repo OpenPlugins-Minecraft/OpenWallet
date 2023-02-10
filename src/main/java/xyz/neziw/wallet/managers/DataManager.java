@@ -3,8 +3,6 @@ package xyz.neziw.wallet.managers;
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import xyz.neziw.wallet.managers.DatabaseManager;
-import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.objects.WalletUser;
 
 @RequiredArgsConstructor

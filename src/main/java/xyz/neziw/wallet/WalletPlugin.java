@@ -35,8 +35,6 @@ import java.nio.file.StandardCopyOption;
 public class WalletPlugin extends JavaPlugin {
 
     @Getter
-    private static WalletPlugin instance;
-    @Getter
     private YamlDocument mainConfig;
     @Getter
     private YamlDocument messagesConfig;
@@ -57,7 +55,6 @@ public class WalletPlugin extends JavaPlugin {
     @SneakyThrows
     @Override
     public void onEnable() {
-        instance = this;
         this.mainConfig = YamlDocument.create(new File(getDataFolder(), "config.yml"), getResource("config.yml"),
                 GeneralSettings.builder().setUseDefaults(false).build(),
                 LoaderSettings.builder().setAutoUpdate(true).build(),

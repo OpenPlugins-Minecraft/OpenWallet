@@ -15,6 +15,7 @@ public class PlayerQuitListener implements Listener {
     private final UserManager userManager;
     private final DatabaseManager databaseManager;
 
+    @SuppressWarnings("unused")
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         final Player player = event.getPlayer();

@@ -23,7 +23,7 @@ import static xyz.neziw.wallet.utilities.ColorUtils.fixList;
 
 public class ConfirmationMenu {
 
-    private final WalletPlugin plugin = WalletPlugin.getInstance();
+    private final WalletPlugin plugin = WalletPlugin.getPlugin(WalletPlugin.class);
     private final YamlDocument menuConfig = plugin.getConfirmationMenuConfig();
     private final YamlDocument messages = plugin.getMessagesConfig();
     @SuppressWarnings("FieldCanBeLocal")

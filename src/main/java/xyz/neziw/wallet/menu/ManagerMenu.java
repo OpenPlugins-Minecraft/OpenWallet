@@ -22,7 +22,7 @@ import static xyz.neziw.wallet.utilities.ColorUtils.fixList;
 
 public class ManagerMenu {
 
-    private final WalletPlugin plugin = WalletPlugin.getInstance();
+    private final WalletPlugin plugin = WalletPlugin.getPlugin(WalletPlugin.class);
     private final YamlDocument config = plugin.getMainConfig();
     private final ShopsLoader shopsLoader = plugin.getShopsLoader();
 

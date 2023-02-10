@@ -32,7 +32,7 @@ public class PlayerInput {
             public void run() {
                 player.sendTitle(fix("&a&lType value"), fix("&7on the chat!"), 0, 21, 0);
             }
-        }.runTaskTimer(WalletPlugin.getInstance(), 0L, 20L);
+        }.runTaskTimer(WalletPlugin.getProvidingPlugin(WalletPlugin.class), 0L, 20L);
         this.register();
     }
 
@@ -46,6 +46,7 @@ public class PlayerInput {
 
     public static Listener handle() {
         return new Listener() {
+            @SuppressWarnings("unused")
             @EventHandler
             public void onChatInput(AsyncPlayerChatEvent event) {
                 final Player player = event.getPlayer();
@@ -58,12 +59,12 @@ public class PlayerInput {
                         player.sendMessage(fix("&cCancelled input!"));
                         current.taskId.cancel();
                         player.sendTitle("", "", 0, 5, 0);
-                        Bukkit.getScheduler().scheduleSyncDelayedTask(WalletPlugin.getInstance(), () -> current.runCancel.run(input), 3);
+                        Bukkit.getScheduler().scheduleSyncDelayedTask(WalletPlugin.getProvidingPlugin(WalletPlugin.class), () -> current.runCancel.run(input), 3);
                         current.unRegister();
                         return;
                     }
                     current.taskId.cancel();
-                    Bukkit.getScheduler().scheduleSyncDelayedTask(WalletPlugin.getInstance(), () -> current.runGo.run(input), 3);
+                    Bukkit.getScheduler().scheduleSyncDelayedTask(WalletPlugin.getProvidingPlugin(WalletPlugin.class), () -> current.runGo.run(input), 3);
                     player.sendTitle("", "", 0, 5, 0);
                     current.unRegister();
                 }

@@ -18,7 +18,7 @@ public abstract class WCommand extends Command implements PluginIdentifiableComm
     @NotNull
     @Override
     public Plugin getPlugin() {
-        return WalletPlugin.getInstance();
+        return WalletPlugin.getProvidingPlugin(WalletPlugin.class);
     }
 
     public abstract void exec(CommandSender sender, String[] args);
