@@ -5,6 +5,7 @@ import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
+import org.bukkit.plugin.ServicePriority;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
 import xyz.neziw.wallet.managers.DataManager;
@@ -21,6 +22,7 @@ public class VaultHook implements IHook, Economy {
     @Override
     public void hook(WalletPlugin plugin) {
         this.plugin = plugin;
+        this.plugin.getServer().getServicesManager().register(Economy.class, this, this.plugin, ServicePriority.High);
     }
 
     @Override

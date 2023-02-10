@@ -1,10 +1,7 @@
 package xyz.neziw.wallet.managers;
 
-import com.yapzhenyie.GadgetsMenu.economy.GEconomyProvider;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.Getter;
-import net.milkbowl.vault.economy.Economy;
-import org.bukkit.plugin.ServicePriority;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hooks.IHook;
 import xyz.neziw.wallet.hooks.impl.GadgetsMenuHook;
@@ -26,14 +23,10 @@ public class HookManager {
             this.hooks.put(PlaceholderHook.class, new PlaceholderHook());
         }
         if (config.getBoolean("hook-gadgets-menu")) {
-            final GadgetsMenuHook gadgetsMenuHook = new GadgetsMenuHook(this.plugin);
-            GEconomyProvider.setMysteryDustStorage(gadgetsMenuHook);
-            this.hooks.put(GadgetsMenuHook.class, gadgetsMenuHook);
+            this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook(this.plugin));
         }
         if (config.getBoolean("hook-vault-api")) {
-            final VaultHook vaultHook = new VaultHook(this.plugin, this.plugin.getDataManager());
-            this.plugin.getServer().getServicesManager().register(Economy.class, vaultHook, this.plugin, ServicePriority.High);
-            this.hooks.put(VaultHook.class, vaultHook);
+            this.hooks.put(VaultHook.class, new VaultHook(this.plugin, this.plugin.getDataManager()));
         }
         this.startHooks();
     }

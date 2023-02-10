@@ -17,6 +17,7 @@ public class GadgetsMenuHook extends GEconomyProvider implements IHook {
     @Override
     public void hook(WalletPlugin plugin) {
         this.dataManager = plugin.getDataManager();
+        GEconomyProvider.setMysteryDustStorage(this);
     }
 
     @Override
