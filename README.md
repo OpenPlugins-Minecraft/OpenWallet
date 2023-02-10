@@ -54,7 +54,10 @@ Don't know how to start? Just check the [wiki](https://github.com/neziw/OpenWall
   
 ```yaml
 # Configuration file version (don't change manually)
-config-version: 1
+config-version: 4
+
+# Whether update checker should be enabled
+update-checker: true
 
 # Database configuration
 database-settings:
@@ -82,12 +85,16 @@ database-settings:
 start-balance: 20.0
 
 # Whether PlaceholderAPI hook should be enabled
-# Default: true
-hook-placeholder-api: true
+# Default: false
+hook-placeholder-api: false
 
 # Whether GadgetsMenu hook should be enabled
 # Default: false
 hook-gadgets-menu: false
+
+# Whether OpenWallet should override Vault economy
+# Default: false
+hook-vault-api: false
 
 # Whether save task should run after plugin enable
 # This is useful in situations like crashes etc.
@@ -95,6 +102,28 @@ hook-gadgets-menu: false
 # will only save in certain situations
 # Default: true
 auto-data-save: true
+
+# Configuration for commands aliases
+commands-aliases:
+  # Admin command
+  wallet-admin:
+    command: 'wadmin'
+    aliases:
+      - 'walletadmin'
+      - 'wa'
+  # Balance command
+  wallet:
+    command: 'wallet'
+    aliases:
+      - 'balance'
+      - 'openwallet'
+  # Shop command
+  shop:
+    command: 'shop'
+    aliases:
+      - 'shops'
+      - 'walletshop'
+      - 'store'
 ```
 </details>
 <details>
