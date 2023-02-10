@@ -100,9 +100,10 @@ public class WalletPlugin extends JavaPlugin {
         }
     }
 
-    @SuppressWarnings("DataFlowIssue")
+    @SuppressWarnings({"DataFlowIssue", "ResultOfMethodCallIgnored"})
     private void exampleShop() {
         final File file = new File(getDataFolder(), "shops");
+        if (!file.exists()) file.mkdirs();
         if (!file.isDirectory()) throw new UnsupportedOperationException("Shops folder is not directory");
         final File[] files = file.listFiles();
         if (files == null || files.length == 0) {
