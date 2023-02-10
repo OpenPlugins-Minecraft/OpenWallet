@@ -1,5 +1,5 @@
 # Configuration file version (don't change manually)
-config-version: 3
+config-version: 4
 
 # Whether update checker should be enabled
 update-checker: true
