@@ -14,12 +14,7 @@ public class UserManager {
 
     @SuppressWarnings("UnusedReturnValue")
     public WalletUser createUser(UUID uuid) {
-        WalletUser user = this.users.get(uuid);
-        if (user == null) {
-            user = new WalletUser(uuid);
-            this.users.put(uuid, user);
-        }
-        return user;
+        return this.users.computeIfAbsent(uuid, key -> new WalletUser(uuid));
     }
 
     public void removeUser(UUID uuid) {
