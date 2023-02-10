@@ -30,8 +30,8 @@ database-settings:
 start-balance: 20.0
 
 # Whether PlaceholderAPI hook should be enabled
-# Default: true
-hook-placeholder-api: true
+# Default: false
+hook-placeholder-api: false
 
 # Whether GadgetsMenu hook should be enabled
 # Default: false
