@@ -74,8 +74,8 @@ public class WalletPlugin extends JavaPlugin {
         this.userManager = new UserManager();
         this.databaseManager = new DatabaseManager(this, this.mainConfig);
         this.hookManager = new HookManager(this, this.mainConfig);
-        this.shopsLoader = new ShopsLoader(this);
         this.dataManager = new DataManager(this.userManager, this.databaseManager);
+        this.shopsLoader = new ShopsLoader(this);
         final PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
         pluginManager.registerEvents(new PlayerJoinListener(this ,this.userManager, this.databaseManager, this.mainConfig), this);
@@ -91,6 +91,7 @@ public class WalletPlugin extends JavaPlugin {
         }
         new Metrics(this, 17633);
         this.exampleShop();
+        this.shopsLoader.loadShops();
         updateCheck();
     }
 

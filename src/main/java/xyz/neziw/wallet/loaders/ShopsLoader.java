@@ -20,7 +20,6 @@ public class ShopsLoader {
 
     public ShopsLoader(WalletPlugin plugin) {
         this.plugin = plugin;
-        this.loadShops();
     }
 
     @SuppressWarnings({"ConstantConditions", "ResultOfMethodCallIgnored"})
