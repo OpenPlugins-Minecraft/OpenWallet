@@ -70,8 +70,8 @@ public class WalletPlugin extends JavaPlugin {
         this.confirmationMenuConfig = YamlDocument.create(new File(getDataFolder(), "confirmation-menu.yml"), getResource("confirmation-menu.yml"));
         this.userManager = new UserManager();
         this.databaseManager = new DatabaseManager(this, this.mainConfig);
-        this.hookManager = new HookManager(this, this.mainConfig);
         this.dataManager = new DataManager(this.userManager, this.databaseManager);
+        this.hookManager = new HookManager(this, this.mainConfig);
         this.shopsLoader = new ShopsLoader(this);
         final PluginManager pluginManager = getServer().getPluginManager();
         pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
@@ -79,7 +79,7 @@ public class WalletPlugin extends JavaPlugin {
         pluginManager.registerEvents(PlayerInput.handle(), this);
         final CommandManager commandManager = new CommandManager(this);
         commandManager.registerCommand(new WalletCommand(this.userManager, this.mainConfig, this.messagesConfig));
-        commandManager.registerCommand(new WalletAdminCommand(this.userManager, this.mainConfig, this.messagesConfig, this.dataManager));
+        commandManager.registerCommand(new WalletAdminCommand(this));
         commandManager.registerCommand(new ShopCommand(this.shopsLoader, this.mainConfig, this.messagesConfig));
         if (this.mainConfig.getBoolean("auto-data-save")) {
             getServer().getScheduler().runTaskTimer(this, new SaveTaskRunnable(this.userManager, this.databaseManager),

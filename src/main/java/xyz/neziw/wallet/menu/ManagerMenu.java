@@ -181,7 +181,7 @@ public class ManagerMenu {
                         this.config.reload();
                         this.shopsLoader.reload();
                         this.plugin.getConfirmationMenuConfig().reload();
-                        player.sendMessage(fix("&aReloaded"));
+                        player.sendMessage(fix(this.plugin.getMessagesConfig().getString("reloaded")));
                         player.playSound(player.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1, 5);
                     } catch (IOException ignored) { }
                 });

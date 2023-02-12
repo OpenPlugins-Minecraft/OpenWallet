@@ -2,10 +2,14 @@ package xyz.neziw.wallet.commands.impl;
 
 import com.google.common.collect.ImmutableList;
 import dev.dejvokep.boostedyaml.YamlDocument;
+import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
+import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.commands.WCommand;
+import xyz.neziw.wallet.loaders.ShopsLoader;
 import xyz.neziw.wallet.managers.UserManager;
 import xyz.neziw.wallet.menu.ManagerMenu;
 import xyz.neziw.wallet.managers.DataManager;
@@ -21,17 +25,24 @@ public class WalletAdminCommand extends WCommand {
 
     @SuppressWarnings({"FieldCanBeLocal", "unused"})
     private final UserManager userManager;
+    private final YamlDocument config;
     private final YamlDocument messages;
+    private final YamlDocument confirmationMenuConfig;
+    private final ShopsLoader shopsLoader;
     private final DataManager dataManager;
 
-    public WalletAdminCommand(UserManager userManager, YamlDocument config, YamlDocument messages, DataManager dataManager) {
-        super(config.getString("commands-aliases.wallet-admin.command"), "", config.getStringList("commands-aliases.wallet-admin.aliases"));
-        this.userManager = userManager;
-        this.messages = messages;
-        this.dataManager = dataManager;
+    public WalletAdminCommand(WalletPlugin plugin) {
+        super(plugin.getMainConfig().getString("commands-aliases.wallet-admin.command"), "",
+                plugin.getMainConfig().getStringList("commands-aliases.wallet-admin.aliases"));
+        this.config = plugin.getMainConfig();
+        this.userManager = plugin.getUserManager();
+        this.messages = plugin.getMessagesConfig();
+        this.confirmationMenuConfig = plugin.getConfirmationMenuConfig();
+        this.shopsLoader = plugin.getShopsLoader();
+        this.dataManager = plugin.getDataManager();
     }
 
-    @Override
+    @Override @SneakyThrows
     public void exec(CommandSender sender, String[] args) {
         if (sender.hasPermission("openwallet.admin")) {
             if (args.length == 0) {
@@ -44,6 +55,12 @@ public class WalletAdminCommand extends WCommand {
                 } else {
                     sender.sendMessage(fix(this.messages.getString("errors.player-only")));
                 }
+            } else if (args.length == 1 && args[0].equals("reload")) {
+                this.config.reload();
+                this.messages.reload();
+                this.shopsLoader.reload();
+                this.confirmationMenuConfig.reload();
+                sender.sendMessage(fix(this.messages.getString("reloaded")));
             } else if (args.length == 2 && args[0].equals("check")) {
                 final String target = args[1];
                 if (this.dataManager.exists(target)) {

@@ -1,5 +1,5 @@
 # Configuration file version (don't change manually)
-config-version: 1
+config-version: 2
 
 # Output messages for /wallet command
 wallet-command:
@@ -36,3 +36,4 @@ balance-set: "&aYou set &6{BALANCE} &afor &6{PLAYER} &aaccount."
 balance-took: "&aYou took &6{BALANCE} &afrom &6{PLAYER} &aaccount."
 balance-check: "&aPlayer &6{PLAYER} &abalance is: &6{BALANCE}"
 successfully-purchased: "&aSuccessfully purchased {PRODUCT}"
+reloaded: "&aReloaded"
