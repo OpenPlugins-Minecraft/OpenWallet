@@ -15,7 +15,6 @@
 [![Forks](https://img.shields.io/github/forks/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/network/members)
 [![GitHub stars](https://img.shields.io/github/stars/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/stargazers)   </br>
 [![Discord](https://img.shields.io/discord/1071413512414449666?color=7289da&logo=discord&logoColor=white&style=for-the-badge)](https://discord.gg/k69htTFCVk)
-[![Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3D132Development%26type%3Dpatrons&style=for-the-badge)](https://patreon.com/132Development)
 
 Welcome to the **OpenWallet** plugin! This is a brand new economy plugin with a lot of features (custom shops, hooks etc.)
 
