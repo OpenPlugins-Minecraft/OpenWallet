@@ -1,3 +1,29 @@
+############################################################
+#                                                          #
+#             OpenWallet - Main configuration              #
+#                                                          #
+# This in main plugin configuration with few useless       #
+# options like update checker, language file etc.          #
+############################################################
 config-version: 1
 
+# Language file to take messages from (see lang folder)
 language-file: "English.yml"
+
+# Whether update checker (SpigotMC) should be active
+update-checker: true
+
+# Database configuration
+database-settings:
+  # Database type (MySQL/SQLite)
+  type: SQLite
+  # IP address of database host (use 127.0.0.1 if local)
+  host: "127.0.0.1"
+  # Port of the database
+  port: 3306
+  # Username to authorize with database
+  user: "minecraft"
+  # Password to database user
+  password: ""
+  # Name of the database
+  database: "openwallet_plugin"

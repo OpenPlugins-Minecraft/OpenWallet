@@ -1,41 +1,39 @@
 package xyz.neziw.wallet.managers;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.concurrent.CompletableFuture;
+import java.util.Optional;
 
 /**
- * This interface provides a simple user management system that can be used to manage users of any type.
- *
- * @param <I> The type of identifier used to identify users.
- * @param <V> The type of value stored for each user.
+ * An interface for managing user objects.
+ * @param <I> the type of the user identifier
+ * @param <V> the type of the user object
  */
 public interface SimpleUserManager<I, V> {
 
     /**
-     * Finds or creates a user with the specified identifier.
-     *
-     * @param identifier The identifier of the user to find or create.
-     * @return A CompletableFuture that will complete with the value of the user with the specified identifier.
+     * Finds an existing user object based on the given identifier,
+     * or creates a new user object if one does not already exist.
+     * @param identifier the user identifier to search for
+     * @return an optional containing the existing or newly created user object,
+     * or an empty optional if no user object could be found or created
      */
-    @NotNull
-    CompletableFuture<V> findOrCreate(@NotNull I identifier);
+    Optional<V> findOrCreate(@NotNull I identifier);
 
     /**
-     * Finds a user with the specified identifier.
-     *
-     * @param identifier The identifier of the user to find.
-     * @return A CompletableFuture that will complete with the value of the user with the specified identifier, or null if the user was not found.
+     * Finds an existing user object based on the given identifier.
+     * @param identifier the user identifier to search for
+     * @return an optional containing the existing user object,
+     * or an empty optional if no user object could be found
      */
-    @NotNull
-    CompletableFuture<V> findUser(@NotNull I identifier);
+    Optional<V> findUser(@NotNull I identifier);
 
     /**
-     * Gets the user with the specified identifier.
-     *
-     * @param identifier The identifier of the user to get.
-     * @return The value of the user with the specified identifier, or null if the user was not found.
+     * Gets the user object based on the given identifier.
+     * @param identifier the user identifier to search for
+     * @return the user object associated with the given identifier,
+     * or null if no user object could be found
      */
-    @NotNull
-    V getUser(@NotNull I identifier);
+    @Nullable V getUser(@NotNull I identifier);
 }

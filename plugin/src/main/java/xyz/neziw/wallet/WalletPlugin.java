@@ -8,7 +8,6 @@ import dev.dejvokep.boostedyaml.settings.general.GeneralSettings;
 import dev.dejvokep.boostedyaml.settings.loader.LoaderSettings;
 import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings;
 import lombok.Getter;
-import org.bukkit.Bukkit;
 import xyz.neziw.wallet.factory.DataFactory;
 import xyz.neziw.wallet.managers.DatabaseManager;
 import xyz.neziw.wallet.managers.SimpleUserManager;
@@ -43,7 +42,7 @@ public class WalletPlugin extends WalletAPI {
         this.executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors(), new ThreadFactoryBuilder()
                 .setNameFormat("OpenWallet-ThreadPool-%d").build());
 
-        this.databaseManager = new DatabaseManager();
+        this.databaseManager = new DatabaseManager(this, this.mainConfig);
         this.userManager = new UserManager();
     }
 
@@ -52,6 +51,7 @@ public class WalletPlugin extends WalletAPI {
 
     }
 
+    @SuppressWarnings("DataFlowIssue")
     private void loadConfigs() {
         final UpdaterSettings settings = UpdaterSettings.builder().setVersioning(new BasicVersioning("config-version")).build();
         try {

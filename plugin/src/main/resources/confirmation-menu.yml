@@ -1,0 +1,8 @@
+############################################################
+#                                                          #
+#             OpenWallet - Confirmation menu               #
+#                                                          #
+# Here you can configure confirmation menu which is opened #
+# before purchases to                                      #
+############################################################
+config-version: 1
