@@ -2,6 +2,7 @@
 
 ![Logo](https://i.imgur.com/SGgWxRi.png)
 ## OpenWallet - OpenSource Bukkit economy plugin
+## Recode IN PROGRESS - V2.0 IS COMING
 
 [![GitHub build](https://img.shields.io/github/actions/workflow/status/neziw/OpenWallet/build.yml?style=for-the-badge)](https://github.com/neziw/OpenWallet/actions)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/neziw/OpenWallet?style=for-the-badge)
