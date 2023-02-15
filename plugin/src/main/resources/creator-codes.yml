@@ -1,0 +1,15 @@
+############################################################
+#                                                          #
+#             OpenWallet - Creator Codes Config            #
+#                                                          #
+# In this file you can configure creator codes, if player  #
+# had provided valid code, then creator will receive 5%    #
+# of balance on successfully shop transaction              #
+############################################################
+config-version: 1
+
+# Creator codes configuration
+creator-codes:
+  # Valid format: {PLAYER NAME};{CODE}
+  - "Arczi435;Arczi"
+  - 'SuperYoutuber123;DummyName'

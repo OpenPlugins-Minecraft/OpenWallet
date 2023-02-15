@@ -1,0 +1,20 @@
+############################################################
+#                                                          #
+#             OpenWallet - Hooks configuration             #
+#                                                          #
+# This file is used to configure available plugin hooks    #
+# like PlaceholderAPI, Vault etc.                          #
+############################################################
+config-version: 1
+
+# Hooks configuration
+hooks:
+  # PlaceholderAPI Hook - whether plugin should register placeholders
+  # if the PlaceholderAPI is available
+  placeholder-api: true
+  # GadgetsMenu Hook - whether plugin should act as MysteryDust storage
+  # if the GadgetsMenu is available
+  gadgets-menu: false
+  # Vault Hook - whether plugin should override default server economy
+  # if the Vault is available
+  vault-api: false

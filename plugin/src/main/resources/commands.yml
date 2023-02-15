@@ -1,0 +1,44 @@
+############################################################
+#                                                          #
+#                OpenWallet - Aliases Config               #
+#                                                          #
+# You can configure custom aliases for OpenWallet commands #
+# in this configuration file.                              #
+############################################################
+config-version: 1
+
+# Aliases configuration
+aliases:
+  # Main command to check balance
+  wallet:
+    enabled: true
+    command: "wallet"
+    aliases:
+      - "balance"
+      - "money"
+  # OpenWallet command for admins
+  wallet-admin:
+    enabled: true
+    command: "walletadmin"
+    aliases:
+      - "wadmin"
+      - "wa"
+  # Shops command
+  shops:
+    enabled: true
+    command: "shops"
+    aliases:
+      - "walletshops"
+      - "ws"
+  # Shop command (you can open specific shop with this command)
+  shop:
+    enabled: true
+    command: "shop"
+    aliases:
+      - "openshop"
+      - "openshops"
+  # Transaction history command
+  history:
+    enabled: true
+    command: "transactions"
+    aliases: []

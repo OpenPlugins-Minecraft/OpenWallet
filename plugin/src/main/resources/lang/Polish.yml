@@ -1,0 +1,13 @@
+############################################################
+#                                                          #
+#             OpenWallet - Polish translation              #
+#                 Authors: Techno Neziw                    #
+#                                                          #
+############################################################
+config-version: 1
+
+# Wiadomości błędów
+error-messages:
+
+# Pozostałe wiadomości
+standalone-messages:
