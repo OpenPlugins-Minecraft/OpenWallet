@@ -1,10 +1,10 @@
-package xyz.neziw.wallet.hooks.impl;
+package xyz.neziw.wallet.hook.impl;
 
 import com.yapzhenyie.GadgetsMenu.economy.GEconomyProvider;
 import com.yapzhenyie.GadgetsMenu.player.OfflinePlayerManager;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.hooks.IHook;
-import xyz.neziw.wallet.managers.DataManager;
+import xyz.neziw.wallet.hook.IHook;
+import xyz.neziw.wallet.manager.DataManager;
 
 public class GadgetsMenuHook extends GEconomyProvider implements IHook {
 

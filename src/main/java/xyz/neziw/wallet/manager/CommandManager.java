@@ -1,10 +1,10 @@
-package xyz.neziw.wallet.managers;
+package xyz.neziw.wallet.manager;
 
 import lombok.SneakyThrows;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.SimplePluginManager;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.commands.WCommand;
+import xyz.neziw.wallet.command.WCommand;
 
 import java.lang.reflect.Field;
 

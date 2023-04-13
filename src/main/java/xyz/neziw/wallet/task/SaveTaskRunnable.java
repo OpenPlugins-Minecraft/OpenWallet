@@ -1,9 +1,9 @@
-package xyz.neziw.wallet.tasks;
+package xyz.neziw.wallet.task;
 
 import lombok.AllArgsConstructor;
-import xyz.neziw.wallet.managers.DatabaseManager;
-import xyz.neziw.wallet.managers.UserManager;
-import xyz.neziw.wallet.objects.WalletUser;
+import xyz.neziw.wallet.manager.DatabaseManager;
+import xyz.neziw.wallet.manager.UserManager;
+import xyz.neziw.wallet.object.WalletUser;
 
 @AllArgsConstructor
 public class SaveTaskRunnable implements Runnable {

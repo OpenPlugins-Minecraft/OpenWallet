@@ -1,4 +1,4 @@
-package xyz.neziw.wallet.objects;
+package xyz.neziw.wallet.object;
 
 import lombok.Getter;
 import org.bukkit.configuration.file.FileConfiguration;

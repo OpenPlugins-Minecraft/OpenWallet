@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import static xyz.neziw.wallet.utilities.ColorUtils.fix;
+import static xyz.neziw.wallet.utility.ColorUtils.fix;
 
 public class PlayerInput {
 

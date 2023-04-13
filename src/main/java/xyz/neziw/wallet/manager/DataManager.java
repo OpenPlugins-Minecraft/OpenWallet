@@ -1,9 +1,9 @@
-package xyz.neziw.wallet.managers;
+package xyz.neziw.wallet.manager;
 
 import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import xyz.neziw.wallet.objects.WalletUser;
+import xyz.neziw.wallet.object.WalletUser;
 
 @RequiredArgsConstructor
 public class DataManager {

@@ -10,16 +10,16 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.managers.UserManager;
-import xyz.neziw.wallet.objects.Product;
-import xyz.neziw.wallet.objects.Shop;
-import xyz.neziw.wallet.objects.WalletUser;
-import xyz.neziw.wallet.managers.DataManager;
+import xyz.neziw.wallet.manager.UserManager;
+import xyz.neziw.wallet.object.Product;
+import xyz.neziw.wallet.object.Shop;
+import xyz.neziw.wallet.object.WalletUser;
+import xyz.neziw.wallet.manager.DataManager;
 
 import java.util.List;
 
-import static xyz.neziw.wallet.utilities.ColorUtils.fix;
-import static xyz.neziw.wallet.utilities.ColorUtils.fixList;
+import static xyz.neziw.wallet.utility.ColorUtils.fix;
+import static xyz.neziw.wallet.utility.ColorUtils.fixList;
 
 public class ConfirmationMenu {
 

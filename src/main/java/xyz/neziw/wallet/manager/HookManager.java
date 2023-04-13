@@ -1,12 +1,12 @@
-package xyz.neziw.wallet.managers;
+package xyz.neziw.wallet.manager;
 
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.Getter;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.hooks.IHook;
-import xyz.neziw.wallet.hooks.impl.GadgetsMenuHook;
-import xyz.neziw.wallet.hooks.impl.PlaceholderHook;
-import xyz.neziw.wallet.hooks.impl.VaultHook;
+import xyz.neziw.wallet.hook.IHook;
+import xyz.neziw.wallet.hook.impl.GadgetsMenuHook;
+import xyz.neziw.wallet.hook.impl.PlaceholderHook;
+import xyz.neziw.wallet.hook.impl.VaultHook;
 
 import java.util.HashMap;
 import java.util.Map;

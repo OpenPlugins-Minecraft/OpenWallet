@@ -1,4 +1,4 @@
-package xyz.neziw.wallet.listeners;
+package xyz.neziw.wallet.listener;
 
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.AllArgsConstructor;
@@ -11,11 +11,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.managers.DatabaseManager;
-import xyz.neziw.wallet.managers.UserManager;
-import xyz.neziw.wallet.objects.WalletUser;
+import xyz.neziw.wallet.manager.DatabaseManager;
+import xyz.neziw.wallet.manager.UserManager;
+import xyz.neziw.wallet.object.WalletUser;
 import xyz.neziw.wallet.basic.UpdateChecker;
-import xyz.neziw.wallet.utilities.ColorUtils;
+import xyz.neziw.wallet.utility.ColorUtils;
 
 @AllArgsConstructor
 public class PlayerJoinListener implements Listener {

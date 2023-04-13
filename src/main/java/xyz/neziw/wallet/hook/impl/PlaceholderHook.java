@@ -1,11 +1,11 @@
-package xyz.neziw.wallet.hooks.impl;
+package xyz.neziw.wallet.hook.impl;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
 import org.bukkit.OfflinePlayer;
 import org.jetbrains.annotations.NotNull;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.hooks.IHook;
-import xyz.neziw.wallet.managers.DataManager;
+import xyz.neziw.wallet.hook.IHook;
+import xyz.neziw.wallet.manager.DataManager;
 
 public class PlaceholderHook extends PlaceholderExpansion implements IHook {
 

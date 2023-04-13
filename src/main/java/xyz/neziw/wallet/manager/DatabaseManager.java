@@ -1,11 +1,11 @@
-package xyz.neziw.wallet.managers;
+package xyz.neziw.wallet.manager;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.Getter;
 import lombok.SneakyThrows;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.objects.WalletUser;
+import xyz.neziw.wallet.object.WalletUser;
 
 import java.io.File;
 import java.sql.Connection;

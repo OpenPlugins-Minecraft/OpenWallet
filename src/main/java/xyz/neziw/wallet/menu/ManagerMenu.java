@@ -10,15 +10,15 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.basic.PlayerInput;
-import xyz.neziw.wallet.loaders.ShopsLoader;
+import xyz.neziw.wallet.loader.ShopsLoader;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static xyz.neziw.wallet.utilities.ColorUtils.fix;
-import static xyz.neziw.wallet.utilities.ColorUtils.fixList;
+import static xyz.neziw.wallet.utility.ColorUtils.fix;
+import static xyz.neziw.wallet.utility.ColorUtils.fixList;
 
 public class ManagerMenu {
 

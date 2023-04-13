@@ -1,11 +1,11 @@
-package xyz.neziw.wallet.loaders;
+package xyz.neziw.wallet.loader;
 
 import lombok.Getter;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.objects.Product;
-import xyz.neziw.wallet.objects.Shop;
+import xyz.neziw.wallet.object.Product;
+import xyz.neziw.wallet.object.Shop;
 
 import java.io.File;
 import java.util.ArrayList;

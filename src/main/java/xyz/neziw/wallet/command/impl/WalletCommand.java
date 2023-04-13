@@ -1,16 +1,16 @@
-package xyz.neziw.wallet.commands.impl;
+package xyz.neziw.wallet.command.impl;
 
 import dev.dejvokep.boostedyaml.YamlDocument;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import xyz.neziw.wallet.commands.WCommand;
-import xyz.neziw.wallet.managers.UserManager;
-import xyz.neziw.wallet.objects.WalletUser;
+import xyz.neziw.wallet.command.WCommand;
+import xyz.neziw.wallet.manager.UserManager;
+import xyz.neziw.wallet.object.WalletUser;
 
 import java.util.Collections;
 import java.util.List;
 
-import static xyz.neziw.wallet.utilities.ColorUtils.fix;
+import static xyz.neziw.wallet.utility.ColorUtils.fix;
 
 public class WalletCommand extends WCommand {
 

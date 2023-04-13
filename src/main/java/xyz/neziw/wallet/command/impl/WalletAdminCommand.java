@@ -1,25 +1,24 @@
-package xyz.neziw.wallet.commands.impl;
+package xyz.neziw.wallet.command.impl;
 
 import com.google.common.collect.ImmutableList;
 import dev.dejvokep.boostedyaml.YamlDocument;
 import lombok.SneakyThrows;
 import org.bukkit.Bukkit;
-import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.commands.WCommand;
-import xyz.neziw.wallet.loaders.ShopsLoader;
-import xyz.neziw.wallet.managers.UserManager;
+import xyz.neziw.wallet.command.WCommand;
+import xyz.neziw.wallet.loader.ShopsLoader;
+import xyz.neziw.wallet.manager.UserManager;
 import xyz.neziw.wallet.menu.ManagerMenu;
-import xyz.neziw.wallet.managers.DataManager;
+import xyz.neziw.wallet.manager.DataManager;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-import static xyz.neziw.wallet.utilities.ColorUtils.fix;
+import static xyz.neziw.wallet.utility.ColorUtils.fix;
 
 public class WalletAdminCommand extends WCommand {
 

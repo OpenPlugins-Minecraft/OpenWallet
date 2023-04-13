@@ -1,4 +1,4 @@
-package xyz.neziw.wallet.commands;
+package xyz.neziw.wallet.command;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

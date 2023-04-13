@@ -1,4 +1,4 @@
-package xyz.neziw.wallet.utilities;
+package xyz.neziw.wallet.utility;
 
 import lombok.experimental.UtilityClass;
 import org.bukkit.ChatColor;

@@ -5,11 +5,11 @@ import dev.triumphteam.gui.guis.Gui;
 import dev.triumphteam.gui.guis.GuiItem;
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;
-import xyz.neziw.wallet.objects.Product;
-import xyz.neziw.wallet.objects.Shop;
+import xyz.neziw.wallet.object.Product;
+import xyz.neziw.wallet.object.Shop;
 
-import static xyz.neziw.wallet.utilities.ColorUtils.fix;
-import static xyz.neziw.wallet.utilities.ColorUtils.fixList;
+import static xyz.neziw.wallet.utility.ColorUtils.fix;
+import static xyz.neziw.wallet.utility.ColorUtils.fixList;
 
 public class ShopMenu {
 

@@ -1,4 +1,4 @@
-package xyz.neziw.wallet.hooks.impl;
+package xyz.neziw.wallet.hook.impl;
 
 import lombok.AllArgsConstructor;
 import net.milkbowl.vault.economy.Economy;
@@ -7,8 +7,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.ServicePriority;
 import xyz.neziw.wallet.WalletPlugin;
-import xyz.neziw.wallet.hooks.IHook;
-import xyz.neziw.wallet.managers.DataManager;
+import xyz.neziw.wallet.hook.IHook;
+import xyz.neziw.wallet.manager.DataManager;
 
 import java.util.List;
 import java.util.UUID;

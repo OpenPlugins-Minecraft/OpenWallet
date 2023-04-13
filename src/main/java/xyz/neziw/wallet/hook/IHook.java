@@ -1,4 +1,4 @@
-package xyz.neziw.wallet.hooks;
+package xyz.neziw.wallet.hook;
 
 import xyz.neziw.wallet.WalletPlugin;
 

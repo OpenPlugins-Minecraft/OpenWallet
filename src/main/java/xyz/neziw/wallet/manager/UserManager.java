@@ -1,7 +1,7 @@
-package xyz.neziw.wallet.managers;
+package xyz.neziw.wallet.manager;
 
 import lombok.Getter;
-import xyz.neziw.wallet.objects.WalletUser;
+import xyz.neziw.wallet.object.WalletUser;
 
 import java.util.Map;
 import java.util.UUID;
