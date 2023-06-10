@@ -7,6 +7,7 @@
 [![GitHub build](https://img.shields.io/github/actions/workflow/status/neziw/OpenWallet/build.yml?style=for-the-badge)](https://github.com/neziw/OpenWallet/actions)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/neziw/OpenWallet?style=for-the-badge)
 ![Last Commit](https://img.shields.io/github/last-commit/neziw/OpenWallet?style=for-the-badge)
+ ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/OpenPlugins-Minecraft/OpenWallet?color=brightgreen&style=for-the-badge)
 [![Open issues](https://img.shields.io/github/issues/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet/issues)
 [![Open pull requests](https://img.shields.io/github/issues-pr/neziw/OpenWallet?style=for-the-badge)](https://github.com/neziw/OpenWallet)
 [![License](https://img.shields.io/github/license/neziw/OpenWallet?style=for-the-badge)](LICENSE)
