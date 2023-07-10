@@ -154,9 +154,10 @@ public class DatabaseManager {
         final PreparedStatement statement;
         statement = this.connection.prepareStatement("SELECT * FROM wallet_data WHERE name=?");
         statement.setString(1, name);
-        ResultSet result;
-        result = statement.executeQuery();
-        return result.getDouble("balance");
+        final ResultSet result = statement.executeQuery();
+        final double d = result.getDouble("balance");
+        result.close();
+        return d;
     }
 
     public void setBalanceByName(String name, double balance) {
