@@ -229,7 +229,7 @@ public class VaultHook implements IHook, Economy {
     @SuppressWarnings("DataFlowIssue")
     @Override
     public EconomyResponse withdrawPlayer(String string, double amount) {
-        return withdrawPlayer(Bukkit.getPlayer(UUID.fromString(string)), amount);
+        return withdrawPlayer(Bukkit.getPlayer(string), amount);
     }
 
     @Override
