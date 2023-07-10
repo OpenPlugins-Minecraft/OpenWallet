@@ -223,7 +223,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public String getName() {
-        return null;
+        return this.plugin.getName();
     }
 
     @SuppressWarnings("DataFlowIssue")
