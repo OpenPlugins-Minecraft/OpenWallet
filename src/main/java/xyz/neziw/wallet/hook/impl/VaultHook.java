@@ -97,7 +97,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse depositPlayer(String playerName, double amount) {
-        return depositPlayer(Bukkit.getPlayer(playerName), amount);
+        return this.depositPlayer(Bukkit.getOfflinePlayer(playerName), amount);
     }
 
     @Override
