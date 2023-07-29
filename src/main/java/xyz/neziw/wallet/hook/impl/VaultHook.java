@@ -3,6 +3,7 @@ package xyz.neziw.wallet.hook.impl;
 import lombok.AllArgsConstructor;
 import net.milkbowl.vault.economy.Economy;
 import net.milkbowl.vault.economy.EconomyResponse;
+import org.apache.commons.lang.NotImplementedException;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.plugin.ServicePriority;
@@ -32,52 +33,52 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse bankBalance(String name) {
-        return null;
+        throw new NotImplementedException("\"bankBalance(String name)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse bankDeposit(String name, double amount) {
-        return null;
+         throw new NotImplementedException("\"bankDeposit(String name, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse bankHas(String name, double amount) {
-        return null;
+         throw new NotImplementedException("\"bankHas(String name, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse bankWithdraw(String name, double amount) {
-        return null;
+         throw new NotImplementedException("\"bankWithdraw(String name, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse createBank(String name, OfflinePlayer player) {
-        return null;
+         throw new NotImplementedException("\"createBank(String name, OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse createBank(String name, String player) {
-        return null;
+         throw new NotImplementedException("\"createBank(String name, String player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean createPlayerAccount(OfflinePlayer player) {
-        return false;
+        throw new NotImplementedException("\"createPlayerAccount(OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean createPlayerAccount(OfflinePlayer player, String worldName) {
-        return false;
+        throw new NotImplementedException("\"createPlayerAccount(OfflinePlayer player, String worldName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean createPlayerAccount(String playerName) {
-        return false;
+        throw new NotImplementedException("\"createPlayerAccount(String playerName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean createPlayerAccount(String playerName, String worldName) {
-        return false;
+        throw new NotImplementedException("\"createPlayerAccount(String playerName, String worldName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
@@ -92,7 +93,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse deleteBank(String name) {
-        return null;
+         throw new NotImplementedException("\"deleteBank(String name)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
@@ -108,17 +109,17 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse depositPlayer(OfflinePlayer player, String worldName, double amount) {
-        return null;
+         throw new NotImplementedException("\"depositPlayer(OfflinePlayer player, String worldName, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse depositPlayer(String playerName, String worldName, double amount) {
-        return null;
+         throw new NotImplementedException("\"depositPlayer(String playerName, String worldName, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public String format(double amount) {
-        return null;
+         throw new NotImplementedException("\"format(double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
@@ -143,17 +144,17 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public double getBalance(String playerName, String world) {
-        return 0;
+        throw new NotImplementedException("\"getBalance(String playerName, String world)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public List<String> getBanks() {
-        return null;
+         throw new NotImplementedException("\"getBanks()\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean has(String playerName, double amount) {
-        return false;
+         throw new NotImplementedException("\"has(String playerName, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
@@ -163,57 +164,57 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public boolean has(OfflinePlayer player, String worldName, double amount) {
-        return false;
+         throw new NotImplementedException("\"has(OfflinePlayer player, String worldName, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean has(String playerName, String worldName, double amount) {
-        return false;
+         throw new NotImplementedException("\"has(String playerName, String worldName, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean hasAccount(OfflinePlayer player) {
-        return false;
+         throw new NotImplementedException("\"hasAccount(OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean hasAccount(OfflinePlayer player, String worldName) {
-        return false;
+         throw new NotImplementedException("\"hasAccount(OfflinePlayer player, String worldName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean hasAccount(String playerName) {
-        return false;
+         throw new NotImplementedException("\"hasAccount(String playerName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean hasAccount(String playerName, String worldName) {
-        return false;
+         throw new NotImplementedException("\"hasAccount(String playerName, String worldName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public boolean hasBankSupport() {
-        return false;
+         return false;
     }
 
     @Override
     public EconomyResponse isBankMember(String name, OfflinePlayer player) {
-        return null;
+         throw new NotImplementedException("\"isBankMember(String name, OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse isBankOwner(String name, OfflinePlayer player) {
-        return null;
+         throw new NotImplementedException("\"isBankOwner(String name, OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse isBankMember(String name, String playerName) {
-        return null;
+         throw new NotImplementedException("\"isBankMember(String name, String playerName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
     public EconomyResponse isBankOwner(String name, String playerName) {
-        return null;
+         throw new NotImplementedException("\"isBankOwner(String name, String playerName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
@@ -240,7 +241,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse withdrawPlayer(String playerName, String worldName, double amount) {
-        return null;
+         throw new NotImplementedException("\"withdrawPlayer(String playerName, String worldName, double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
     }
 
     @Override
