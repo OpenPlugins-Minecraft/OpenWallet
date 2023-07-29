@@ -10,6 +10,9 @@ import org.bukkit.plugin.ServicePriority;
 import xyz.neziw.wallet.WalletPlugin;
 import xyz.neziw.wallet.hook.IHook;
 import xyz.neziw.wallet.manager.DataManager;
+import xyz.neziw.wallet.manager.DatabaseManager;
+import xyz.neziw.wallet.manager.UserManager;
+import xyz.neziw.wallet.object.WalletUser;
 
 import java.util.List;
 import java.util.UUID;
@@ -19,6 +22,8 @@ public class VaultHook implements IHook, Economy {
 
     private WalletPlugin plugin;
     private DataManager dataManager;
+    private DatabaseManager databaseManager;
+    private UserManager userManager;
 
     @Override
     public void hook(WalletPlugin plugin) {
@@ -63,7 +68,21 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public boolean createPlayerAccount(OfflinePlayer player) {
-        throw new NotImplementedException("\"createPlayerAccount(OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
+        if (this.databaseManager.exists(player.getName())) {
+            return false;
+        } else {
+            this.databaseManager.registerUser(player.getUniqueId(), player.getName());
+            this.userManager.createUser(player.getUniqueId());
+            final WalletUser user = this.userManager.getUser(player.getUniqueId());
+            if (this.databaseManager.exists(player.getName())) {
+                this.databaseManager.loadUser(user);
+                return false;
+            } else {
+                this.databaseManager.registerUser(player.getUniqueId(), player.getName());
+                this.databaseManager.loadUser(user);
+                return true;
+            }
+        }
     }
 
     @Override
@@ -73,7 +92,23 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public boolean createPlayerAccount(String playerName) {
-        throw new NotImplementedException("\"createPlayerAccount(String playerName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
+        if (this.databaseManager.exists(playerName)) {
+            return false;
+        } else {
+            this.databaseManager.registerUser(Bukkit.getOfflinePlayer(playerName).getUniqueId(), playerName);
+            OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(playerName);
+            this.userManager.createUser(offlinePlayer.getUniqueId());
+            final WalletUser user = this.userManager.getUser(offlinePlayer.getUniqueId());
+            user.setName(playerName);
+            if (this.databaseManager.exists(playerName)) {
+                this.databaseManager.loadUser(user);
+                return false;
+            } else {
+                this.databaseManager.registerUser(offlinePlayer.getUniqueId(), playerName);
+                this.databaseManager.loadUser(user);
+                return true;
+            }
+        }
     }
 
     @Override
@@ -119,7 +154,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public String format(double amount) {
-         return String.format("%." + fractionalDigits() + "f", amount);
+        return String.format("%." + fractionalDigits() + "f", amount);
     }
 
     @Override
@@ -139,7 +174,12 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public double getBalance(String playerName) {
-        return (Bukkit.getPlayer(playerName) != null) ? this.dataManager.getBalance(playerName) : 0.0D;
+        if(this.dataManager.exists(playerName)){
+            return this.dataManager.getBalance(playerName);
+        }
+        else{
+            return 0.0D;
+        }
     }
 
     @Override
@@ -174,7 +214,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public boolean hasAccount(OfflinePlayer player) {
-         throw new NotImplementedException("\"hasAccount(OfflinePlayer player)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
+        return this.databaseManager.exists(player.getName());
     }
 
     @Override
@@ -184,7 +224,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public boolean hasAccount(String playerName) {
-         throw new NotImplementedException("\"hasAccount(String playerName)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
+        return this.databaseManager.exists(playerName);
     }
 
     @Override
@@ -227,16 +267,26 @@ public class VaultHook implements IHook, Economy {
         return this.plugin.getName();
     }
 
-    @SuppressWarnings("DataFlowIssue")
     @Override
     public EconomyResponse withdrawPlayer(String string, double amount) {
-        return withdrawPlayer(Bukkit.getPlayer(string), amount);
+        if(getBalance(string) >= amount){
+            this.dataManager.withDrawBalance(string, amount);
+            return new EconomyResponse(amount, getBalance(string), EconomyResponse.ResponseType.SUCCESS, "Success");
+        }
+        else {
+            return new EconomyResponse(amount, getBalance(string), EconomyResponse.ResponseType.FAILURE, "Error");
+        }
     }
 
     @Override
     public EconomyResponse withdrawPlayer(OfflinePlayer player, double amount) {
-        this.dataManager.withDrawBalance(player.getName(), amount);
-        return (getBalance(player) >= amount ? new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success") : new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.FAILURE, "Error"));
+        if(getBalance(player) >= amount){
+            this.dataManager.withDrawBalance(player.getName(), amount);
+            return new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success");
+        }
+        else {
+            return new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.FAILURE, "Error");
+        }
     }
 
     @Override
@@ -246,7 +296,12 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public EconomyResponse withdrawPlayer(OfflinePlayer player, String worldName, double amount) {
-        this.dataManager.withDrawBalance(player.getName(), amount);
-        return (getBalance(player) >= amount ? new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success") : new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.FAILURE, "Error"));
+        if(getBalance(player) >= amount){
+            this.dataManager.withDrawBalance(player.getName(), amount);
+            return new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.SUCCESS, "Success");
+        }
+        else {
+            return new EconomyResponse(amount, getBalance(player), EconomyResponse.ResponseType.FAILURE, "Error");
+        }
     }
 }
