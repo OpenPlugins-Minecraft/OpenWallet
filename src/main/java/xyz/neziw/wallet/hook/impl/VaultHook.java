@@ -119,7 +119,7 @@ public class VaultHook implements IHook, Economy {
 
     @Override
     public String format(double amount) {
-         throw new NotImplementedException("\"format(double amount)\" is not implemented. Report this to " + this.plugin.getName() +" developer!");
+         return String.format("%." + fractionalDigits() + "f", amount);
     }
 
     @Override
