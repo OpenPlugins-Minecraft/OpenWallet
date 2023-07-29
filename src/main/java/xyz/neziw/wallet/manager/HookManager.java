@@ -26,7 +26,7 @@ public class HookManager {
             this.hooks.put(GadgetsMenuHook.class, new GadgetsMenuHook(this.plugin));
         }
         if (config.getBoolean("hook-vault-api")) {
-            this.hooks.put(VaultHook.class, new VaultHook(this.plugin, this.plugin.getDataManager()));
+            this.hooks.put(VaultHook.class, new VaultHook(this.plugin, this.plugin.getDataManager(), this.plugin.getDatabaseManager(), this.plugin.getUserManager()));
         }
         this.startHooks();
     }
