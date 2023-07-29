@@ -74,7 +74,7 @@ public class WalletPlugin extends JavaPlugin {
         this.hookManager = new HookManager(this, this.mainConfig);
         this.shopsLoader = new ShopsLoader(this);
         final PluginManager pluginManager = getServer().getPluginManager();
-        pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager), this);
+        pluginManager.registerEvents(new PlayerQuitListener(this.userManager, this.databaseManager, this), this);
         pluginManager.registerEvents(new PlayerJoinListener(this ,this.userManager, this.databaseManager, this.mainConfig), this);
         pluginManager.registerEvents(PlayerInput.handle(), this);
         final CommandManager commandManager = new CommandManager(this);
